@@ -1,6 +1,6 @@
 ---
-layout: Learning Resources
-title: You're up and running!
+layout: post
+title: Learning Resources
 ---
 
 The following site provides a comprehensive, graphical view on mining and securing a blockchain, that is fun to use:
