@@ -43,7 +43,8 @@ line on your local machine:
 
 Once the remote machine is synced start your local lightning daemon with:
 
-    lightningd/lightningd --bitcoin-rpcuser=rpcuser --bitcoin-rpcpassword=rpcpass --bitcoin-rpcport=8332 --network=testnet --log-level=debug
+    lightningd/lightningd --bitcoin-rpcuser=rpcuser --bitcoin-rpcpassword=tvIZqauaRAJ1oU1gDS0JSRgPmR1FEzJ6bfM2CKxfy_4=
+    --bitcoin-rpcport=8332 --network=testnet --log-level=debug
 
 Replace `--network=testnet` with `--network=bitcoin` to run mainnet.  When restarting your local machine, 
 you need to re-open the ssh tunnel again.
