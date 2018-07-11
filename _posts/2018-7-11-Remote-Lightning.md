@@ -9,6 +9,7 @@ default rpc port:
 
     ssh -i /path/to/your/ssh_key.pem -f <USER>@<SERVER_IP> -L 8332:127.0.0.1:8332 -N
 
+If you authenticate to ssh with a password, you can leave out the `-i` option. 
 There are two different ways at the moment to authenticate to bitcoind. One is the standard
 rpcuser/rpcpassword method. This however is about to be deprecated. It is recommend to use the
 new 'cookie' authentication. For this first generate a token, bitcoin provides a tool for this 
