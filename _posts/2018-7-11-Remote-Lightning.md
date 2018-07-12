@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Connecting to a Remote Lightning Node
+title: Connect C-Lightning to a Remote Bitcoin Node
 ---
 
 This post describes how to make your local lightning node connect to a remote node. 
