@@ -32,7 +32,8 @@ restriction of the total keypath space.
 In practice, this means that for each keypath level we can generate 2^31 = 2'147'483'648 (4 byte numbers minus 1 bit for encoding) non-hardened and the same number of hardened keys. A keypath like `m/44'/0'/0'/0/2147483646` is perfectly valid. If the key at that index is used to generate an address and receive coins, the wallet would have to first scan all 2'147'483'647 addresses until it finds the funds.
 
 It gets worse, since we can also go as deep in the keypath tree until the data structure that holds it goes out of memory to keypaths like:
-`m/44'/0'/0/2147483646/2147483646/2147483646/2147483646/2147483646/.../2147483646`.
+
+`m/44'/0'/0'/0/2147483646/2147483646/2147483646/.../2147483646`
 
 At this rate we quickly surpass the overall possible keyspace of Bitcoin keys, making it computationally infeasible to find the key to spend the coins again. An attacker can use this to create a transaction with a change keypath that is virtually unspendable without the
 complete knowledge of the keypath. Hardware wallets should therefore limit the reachable indexes in the keypath.
