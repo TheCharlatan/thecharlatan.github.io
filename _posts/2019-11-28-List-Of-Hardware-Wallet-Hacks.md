@@ -1,5 +1,7 @@
 # An exhaustive list of hardware wallet hacks
 
+_This is a dynamic document and changes as my understanding of these vulnerability changes and as new vulnerabilities get discovered_
+
 # 2014
 ### Juli:
 
