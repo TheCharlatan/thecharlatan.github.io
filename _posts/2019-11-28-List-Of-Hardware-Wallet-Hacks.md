@@ -59,6 +59,16 @@ Description: A specially crafted transaction could contain a change output of an
 :clipboard: Patch: https://github.com/trezor/trezor-firmware/commit/9588e8f2736b60916f51e470deb18f55112a6ebc  
 :mega: Explanation from vendor: https://blog.trezor.io/trezor-one-firmware-update-1-6-1-eecd0534ab95  
 
+:office: Vendor: Shift Cryptosecurity  
+:iphone: Product: BitBox01
+:scroll: Title: Bad BIP32 implementation
+:nerd_face: Detail: Accessing the 'xpub' API command for the master key path of both the hidden and the standard wallet allowed for the reconstructing of the private keys of the standard and hidden wallet.  
+:eyes: Type: API remote attack  
+:poop: Bug: Bad cryptography for the wallet vs hidden wallet derivation  
+:sunglasses: Reporter: Saleem Rashid  
+:mega: Explanation from vendor: https://shiftcrypto.ch/bitbox01/disclosure  
+:dart: Explanation from reporter: https://saleemrashid.com/2018/11/26/breaking-into-bitbox   
+
 ### March:
 
 :office: Vendor: Ledger  
@@ -84,7 +94,7 @@ Description: A specially crafted transaction could contain a change output of an
 :mega: Explanation from vendor: https://donjon.ledger.com/lsb/003/  
 :dart: Explanation from reporter: https://i.blackhat.com/us-18/Wed-August-8/us-18-Volokitin-Software-Attacks-On-Hardware-Wallets.pdf  
 
-### May: 
+### May
 
 :office: Vendor: Trezor  
 :scroll: Title: Race condition in recovery  
@@ -103,6 +113,30 @@ Detai: Specially crafted USB packet could trigger a buffer overflow which could 
 :sunglasses: Reporter: Chrisian Reiter  
 :clipboard: Patch: https://github.com/trezor/trezor-firmware/commit/c9113fd3f5fcd78e9e560dbac75ed5aae359eb2d  
 :mega: Explanation from vendor: https://github.com/trezor/trezor-firmware/commit/c9113fd3f5fcd78e9e560dbac75ed5aae359eb2d  
+
+### July
+
+:office: Vendor: Shift Cryptosecurity  
+:iphone: Product: BitBox01   
+:scroll: Title: Simulating the secure chip    
+:nerd_face: Detail: After physically breaking apart the BitBox casing, attaching invasive probes, and manipulating the data sent to the BitBox's microcontroller, a BitBox could be reset but without erasing the wallet secrets. A patch was provided on 31 July 2018. If the bottom casing of your BitBox has not been removed or tampered with, you are not at risk.     
+:eyes: Type: Information leak     
+:poop: Bug: Secrets not cleared after wallet reset  
+:sunglasses: Reporter: Saleem Rashid   
+:mega: Explanation from vendor: https://shiftcrypto.ch/bitbox01/disclosure/   
+:dart: Explanation from reporter: https://saleemrashid.com/2018/11/26/breaking-into-bitbox   
+
+:office: Vendor: Shift Cryptosecurity  
+:iphone: Product: BitBox01   
+:scroll: Title: Man-in-the-middle (MITM) between the mobile verification app and the BitBox.   
+:nerd_face: Detail: When initially pairing a BitBox to the mobile verification app, a man-in-the-middle (MITM) on a compromised computer could insert themselves and then later change the information to be displayed on the mobile app. We provided a patch on 31 July 2018 in firmware v4.0.0. The vulnerability existed only during the initial pairing and if your computer was compromised by an attacker aware of the issue.   
+:eyes: Type: Information leak     
+:poop: Bug: Bad Crypto  
+:sunglasses: Reporter: Saleem Rashid   
+:mega: Explanation from vendor: https://shiftcrypto.ch/bitbox01/disclosure/   
+:dart: Explanation from reporter: https://saleemrashid.com/2018/11/26/breaking-into-bitbox   
+
+
 
 ### August
 
@@ -152,7 +186,7 @@ Detai: Specially crafted USB packet could trigger a buffer overflow which could 
 :nerd_face: Detail: The C/C++ reference implementation for U2F by Yubico contains broken definition of a struct which can leak bytes from RAM via USB. The bug was fixed by updating the structure definition to a new correct one.  
 :eyes: Type: Information leak  
 :poop: Bug: Bad struct memory layout  
-:sunglasses: Reporter: Christian Reitter  
+:sunglasses: Reporter: Christian Reiter  
 :clipboard: Patch: https://github.com/trezor/trezor-firmware/commit/0b26c529ec49daf584f322f3ef959c79694c8cf5  
 :mega: Explanation from vendor: https://blog.trezor.io/details-about-the-security-updates-in-trezor-one-firmware-1-7-2-3c97adbf121e  
 :dart: Explanation from reporter: https://blog.inhq.net/posts/u2fhid_init_resp-information-leak/  
@@ -165,7 +199,36 @@ Detai: Specially crafted USB packet could trigger a buffer overflow which could 
 :mega: Explanation from vendor: https://donjon.ledger.com/lsb/004/  
 :dart: Explanation from reporter: https://sergeylappo.github.io/ledger-hack/  
 
+:office: Vendor: Shift Cryptosecurity  
+:iphone: Product: BitBox01   
+:scroll: Title: Poking around the secure chip  
+:nerd_face: Detail: Bad configuration of the secure chip leaves it redundant in the BitBox01 hardware design. This is not patchable.
+:eyes: Type: Break of existing security model, lead to re-assesment of security
+claims  
+:poop: Bug: Bad secure chip configuration.
+:sunglasses: Reporter: Saleem Rashid   
+:dart: Explanation from reporter: https://saleemrashid.com/2018/11/26/breaking-into-bitbox/  
+
 ### December
+
+:office: Vendor: Shift Cryptosecurity  
+:iphone: Product: BitBox01   
+:scroll: Title: Man-in-the-middle (MITM) between the mobile verification app and the BitBox  
+:nerd_face: Detail: Encrypted USB communication, when not authenticated, can be modified by a man-in-the-middle (MITM) attacker in undesirable ways. A patch was provided on 4 December 2018 in firmware v5.0.0. To date, a method about how to exploit this issue with the BitBox has not been reported.
+:eyes: Type: Break on-hardware verification   
+:poop: Bug: Usage of a plain AES-256-CBC cipher for authentication. Never use encryption for authentication.   
+:sunglasses: Reporter: Saleem Rashid   
+:mega: Explanation from vendor: https://shiftcrypto.ch/bitbox01/disclosure/  
+
+
+:office: Vendor: Shift Cryptosecurity  
+:iphone: Product: BitBox01   
+:scroll: Title: Man-in-the-middle (MITM) between the mobile verification app and the BitBox  
+:nerd_face: Detail: Encrypted USB communication, when not authenticated, can be modified by a man-in-the-middle (MITM) attacker in undesirable ways. A patch was provided on 4 December 2018 in firmware v5.0.0. To date, a method about how to exploit this issue with the BitBox has not been reported.
+:eyes: Type: Break on-hardware verification   
+:poop: Bug: Usage of a plain AES-256-CBC cipher for authentication. Never use encryption for authentication.   
+:sunglasses: Reporter: Saleem Rashid   
+:mega: Explanation from vendor: https://shiftcrypto.ch/bitbox01/disclosure/  
 
 :office: Vendor: Trezor  
 :scroll: Title: SRAM Dump during the firmware update  
@@ -197,6 +260,27 @@ Detai: Specially crafted USB packet could trigger a buffer overflow which could 
 :clipboard: Patch: https://github.com/trezor/trezor-firmware/commit/22f37e81a3270da5e8e5d6c55abc8f15f3a35567  
 :mega: Explanation from vendor: https://blog.trezor.io/details-of-security-updates-for-trezor-one-firmware-1-8-0-and-trezor-model-t-firmware-2-1-0-408e59dc012  
 
+:office: Vendor: Shift Cryptosecurity  
+:iphone: Product: BitBox01   
+:scroll: Title: Information leak via U2F  
+:nerd_face: Detail: The C/C++ reference implementation for U2F by Yubico contains broken definition of a struct which can leak bytes from RAM via USB. The bug was fixed by updating the structure definition to a new correct one.  
+claims  
+:poop: Bug: Bad struct memory layout  
+:sunglasses: Reporter: Christian Reiter
+:mega: Explanation from vendor: https://medium.com/shiftcrypto/important-security-news-about-version-4-4-0-upgrade-2449b745be9  
+:dart: Explanation from reporter: https://blog.inhq.net/posts/u2fhid_init_resp-information-leak/  
+
+
+### March
+
+:office: Vendor: Shift Cryptosecurity  
+:iphone: Product: BitBox01   
+:scroll: Title: BIP32 address derivation ransom attack  
+:nerd_face: Detail: No restrictions on possible BIP32 key paths led to a ransom attack  
+:poop: Bug: Bad interpretation of BIP32 and BIP44 standard  
+:mega: Explanation from vendor: https://medium.com/shiftcrypto/bitbox-desktop-app-4-6-0-with-firmware-6-0-3-release-ec46937afe7c  https://medium.com/shiftcrypto/bitbox-desktop-app-4-5-0-with-firmware-6-0-2-release-fd77f8186a29
+
+
 ### April
 
 :office: Vendor: Trezor  
@@ -218,6 +302,15 @@ Detai: Specially crafted USB packet could trigger a buffer overflow which could 
 :mega: Explanation from vendor: https://donjon.ledger.com/lsb/006/  
 :dart: Explanation from reporter: https://blog.inhq.net/posts/oled-side-channel-status-summary/  
 
+### June
+
+:office: Vendor: Shift Cryptosecurity  
+:iphone: Product: BitBox01   
+:scroll: Title: Blinking pattern mismatch    
+:nerd_face: Detail: The blinking patterns of the BitBox01 reveal important information on the behvaiour of the device  
+:poop: Bug: Bad differentiation between modes for the user  
+:mega: Explanation from vendor: https://medium.com/shiftcrypto/bitbox-desktop-app-4-9-0-with-bitbox01-firmware-6-1-1-release-1b84c5f9295f  
+
 
 ### October
 
@@ -238,6 +331,13 @@ Detai: Specially crafted USB packet could trigger a buffer overflow which could 
 :clipboard: Patch: https://github.com/LedgerHQ/ledger-app-monero/commit/5d0658ad6369f3d0ff2d10ee9effa410eb185b98  
 :mega: Explanation from vendor: https://donjon.ledger.com/lsb/007/  
 
+:office: Vendor: Shift Cryptosecurity  
+:iphone: Product: BitBox01   
+:scroll: Title: Mobile pairing information leak BitBox01   
+:nerd_face: Detail: ?  
+:poop: Bug: Bad cryptography  
+:mega: Explanation from vendor: https://medium.com/shiftcrypto/bitboxapp-4-14-0-5e72575b0819  
+
 
 ## Footnotes
 ### Relevant blogs:
@@ -248,7 +348,7 @@ wallet.fail: https://wallet.fail/
 ### :office: Vendor Security Programs:
 Trezor: https://trezor.io/security/  
 Ledger: https://donjon.ledger.com/bounty/  
-
+Shift Cryptosecurity: https://shiftcrypto.ch/policies/bug-bounty-policy/
 
 
 
