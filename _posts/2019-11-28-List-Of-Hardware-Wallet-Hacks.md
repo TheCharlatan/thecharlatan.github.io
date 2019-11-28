@@ -8,7 +8,7 @@ Vendor: Trezor
 Title: Malicious ScriptSig in transaction  
 Description: A specially crafted transaction could extract the private key  
 Type: Transaction validation attack with authentication  
-Bug: Buffer Overflow  
+:poop: Bug: Buffer Overflow  
 Reporter: Nicolas Bacca (Ledger)  
 Patch: https://github.com/trezor/trezor-firmware/commit/524f2a957afb66e6a869384aceaca1cb7f9cba60  
 
