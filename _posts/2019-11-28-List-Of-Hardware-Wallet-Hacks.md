@@ -260,6 +260,15 @@ claims
 :clipboard: Patch: https://github.com/trezor/trezor-firmware/commit/22f37e81a3270da5e8e5d6c55abc8f15f3a35567  
 :mega: Explanation from vendor: https://blog.trezor.io/details-of-security-updates-for-trezor-one-firmware-1-8-0-and-trezor-model-t-firmware-2-1-0-408e59dc012  
 
+:office: Vendor: Coldcard  
+:scroll: Title: Attack on Coldcard short PINs    
+:nerd_face: Detail:  The attack is achieved by connecting a man-in-the-middle (MITM) to the bus the CCW uses to communicate with its secure element (SE). Then commands on the bus are modified to cause the MCU to not count failed PIN entry attempts.  This gives the attacker an unlimited number of attempts to guess the PIN.   
+:eyes: Type: Bypass of authentication    
+:poop: Bug: Bad secure chip answer verification  
+:sunglasses: Reporter: Lazy Ninja  
+:mega: Explanation from vendor: https://blog.coinkite.com/use-long-pins/  
+:dart: Explanation from reporter: https://www.cryptolazyninja.com/2019/03/coldcard-wallet-short-pin-brute-force.html
+
 :office: Vendor: Shift Cryptosecurity  
 :iphone: Product: BitBox01   
 :scroll: Title: Information leak via U2F  
@@ -302,6 +311,15 @@ claims
 :mega: Explanation from vendor: https://donjon.ledger.com/lsb/006/  
 :dart: Explanation from reporter: https://blog.inhq.net/posts/oled-side-channel-status-summary/  
 
+:office: Vendor: Coldcard  
+:scroll: Title: Possible Display Information Leak    
+:nerd_face: Detail: The attack uses power analysis to read the information shown on the OLED display.  
+:eyes: Type: Information leak  
+:poop: Bug: OLED screens consume power based on number of pixels that are on. Mitigated here by making the number of pixels that are on per row when displaying the seed constant  
+:sunglasses: Reporter: Christian Reiter  
+:mega: Explanation from vendor: https://blog.coinkite.com/noise-troll/   
+:dart: Explanation from reporter: https://blog.inhq.net/posts/oled-side-channel-status-summary/  
+
 ### June
 
 :office: Vendor: Shift Cryptosecurity  
@@ -330,6 +348,19 @@ claims
 :poop: Bug: Bad MLSA signature implementation   
 :clipboard: Patch: https://github.com/LedgerHQ/ledger-app-monero/commit/5d0658ad6369f3d0ff2d10ee9effa410eb185b98  
 :mega: Explanation from vendor: https://donjon.ledger.com/lsb/007/  
+
+:office: Vendor: Coldcard    
+:scroll: Title: Troublesome Change Outputs   
+:nerd_face: Detail: It is possible to make a valid PSBT file that sends the change left from a transaction to a unknown location. If an attacker had your XPUB, and could change your PSBT file before you sign, they could modify the file so that the “change” (ie. the balance of Bitcoins you are sending back to yourself) goes to an effectively unknown address. If the attacker is profit motivated, they can ransom the knowledge of those change UTXO back to you.   
+:poop: Bug: BIP32 address derivation ransom attack  
+:mega: Explanation from vendor: https://blog.coinkite.com/troublesome-change/   
+:dart: Explanation from reporter: https://thecharlatan.github.io/Ransom-Coldcard/  
+
+:office: Vendor: Coldcard    
+:scroll: Title: Ransom attack on Coldcard's receive address verification  
+:nerd_face: Detail: By inserting newlines in the derivation path string sent to the Coldcard, the displayed characters could be split. This could trick users into verifying an address for a keypath that is not easily accessible.
+:poop: Bug: Bad input validation    
+:dart: Explanation from reporter: https://thecharlatan.github.io/Ransom-Coldcard/  
 
 :office: Vendor: Shift Cryptosecurity  
 :iphone: Product: BitBox01   
