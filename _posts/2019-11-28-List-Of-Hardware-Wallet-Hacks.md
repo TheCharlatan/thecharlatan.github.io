@@ -202,7 +202,7 @@ Detai: Specially crafted USB packet could trigger a buffer overflow which could 
 :office: Vendor: Shift Cryptosecurity  
 :iphone: Product: BitBox01   
 :scroll: Title: Poking around the secure chip  
-:nerd_face: Detail: Bad configuration of the secure chip leaves it redundant in the BitBox01 hardware design. This is not patchable.
+:nerd_face: Detail: Bad configuration of the secure chip leaves it redundant in the BitBox01 hardware design. This is not patchable.  
 :eyes: Type: Break of existing security model, lead to re-assesment of public security claims  
 :poop: Bug: Bad secure chip configuration.  
 :sunglasses: Reporter: Saleem Rashid   
@@ -213,7 +213,7 @@ Detai: Specially crafted USB packet could trigger a buffer overflow which could 
 :office: Vendor: Shift Cryptosecurity  
 :iphone: Product: BitBox01   
 :scroll: Title: Man-in-the-middle (MITM) between the mobile verification app and the BitBox  
-:nerd_face: Detail: Encrypted USB communication, when not authenticated, can be modified by a man-in-the-middle (MITM) attacker in undesirable ways. A patch was provided on 4 December 2018 in firmware v5.0.0. To date, a method about how to exploit this issue with the BitBox has not been reported.  
+:nerd_face: Detail: Encrypted USB communication, when not authenticated, can be modified by a man-in-the-middle (MITM) attacker in undesirable ways. A patch was provided on 4 December 2018 in firmware v5.0.0.   
 :eyes: Type: Break on-hardware verification   
 :poop: Bug: Usage of a plain AES-256-CBC cipher for authentication. Never use encryption for authentication.   
 :sunglasses: Reporter: Saleem Rashid   
@@ -223,7 +223,7 @@ Detai: Specially crafted USB packet could trigger a buffer overflow which could 
 :office: Vendor: Shift Cryptosecurity  
 :iphone: Product: BitBox01   
 :scroll: Title: Man-in-the-middle (MITM) between the mobile verification app and the BitBox  
-:nerd_face: Detail: Encrypted USB communication, when not authenticated, can be modified by a man-in-the-middle (MITM) attacker in undesirable ways. A patch was provided on 4 December 2018 in firmware v5.0.0. To date, a method about how to exploit this issue with the BitBox has not been reported.  
+:nerd_face: Detail: Encrypted USB communication, when not authenticated, can be modified by a man-in-the-middle (MITM) attacker in undesirable ways. A patch was provided on 4 December 2018 in firmware v5.0.0.  
 :eyes: Type: Break on-hardware verification   
 :poop: Bug: Usage of a plain AES-256-CBC cipher for authentication. Never use encryption for authentication.   
 :sunglasses: Reporter: Saleem Rashid   
