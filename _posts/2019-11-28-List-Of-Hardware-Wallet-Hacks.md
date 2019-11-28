@@ -18,8 +18,8 @@ Description: A specially crafted transaction could extract the private key
 :office: Vendor: Trezor  
 :scroll: Title: SpendMultisig malicious change in transaction  
 Description: A specially crafted transaction could contain a change output of an attacker, which wasn't confirmed by the user  
-:eyes: Type: Transaction validation attack with authentication 
-:poop: Bug: Insufficient checks  
+:eyes: Type: Transaction validation attack with authentication   
+:poop: Bug: Insufficient transaction checks  
 :sunglasses: Reporter: Nicolas Bacca (Ledger)  
 :clipboard: Patch: https://github.com/trezor/trezor-firmware/commit/137a60ce017c402ac160258bcc4b5f7b5aba0560  
 
@@ -60,13 +60,13 @@ Description: A specially crafted transaction could contain a change output of an
 :mega: Explanation from vendor: https://blog.trezor.io/trezor-one-firmware-update-1-6-1-eecd0534ab95  
 
 :office: Vendor: Shift Cryptosecurity  
-:iphone: Product: BitBox01
-:scroll: Title: Bad BIP32 implementation
-:nerd_face: Detail: Accessing the 'xpub' API command for the master key path of both the hidden and the standard wallet allowed for the reconstructing of the private keys of the standard and hidden wallet.  
-:eyes: Type: API remote attack  
-:poop: Bug: Bad cryptography for the wallet vs hidden wallet derivation  
-:sunglasses: Reporter: Saleem Rashid  
-:mega: Explanation from vendor: https://shiftcrypto.ch/bitbox01/disclosure  
+:iphone: Product: BitBox01  
+:scroll: Title: Bad BIP32 implementation  
+:nerd_face: Detail: Accessing the 'xpub' API command for the master key path of both the hidden and the standard wallet allowed for the reconstructing of the private keys of the standard and hidden wallet.   
+:eyes: Type: API remote attack   
+:poop: Bug: Bad cryptography for the wallet vs hidden wallet derivation   
+:sunglasses: Reporter: Saleem Rashid   
+:mega: Explanation from vendor: https://shiftcrypto.ch/bitbox01/disclosure   
 :dart: Explanation from reporter: https://saleemrashid.com/2018/11/26/breaking-into-bitbox   
 
 ### March:
@@ -203,9 +203,8 @@ Detai: Specially crafted USB packet could trigger a buffer overflow which could 
 :iphone: Product: BitBox01   
 :scroll: Title: Poking around the secure chip  
 :nerd_face: Detail: Bad configuration of the secure chip leaves it redundant in the BitBox01 hardware design. This is not patchable.
-:eyes: Type: Break of existing security model, lead to re-assesment of security
-claims  
-:poop: Bug: Bad secure chip configuration.
+:eyes: Type: Break of existing security model, lead to re-assesment of public security claims  
+:poop: Bug: Bad secure chip configuration.  
 :sunglasses: Reporter: Saleem Rashid   
 :dart: Explanation from reporter: https://saleemrashid.com/2018/11/26/breaking-into-bitbox/  
 
@@ -275,7 +274,7 @@ claims
 :nerd_face: Detail: The C/C++ reference implementation for U2F by Yubico contains broken definition of a struct which can leak bytes from RAM via USB. The bug was fixed by updating the structure definition to a new correct one.  
 claims  
 :poop: Bug: Bad struct memory layout  
-:sunglasses: Reporter: Christian Reiter
+:sunglasses: Reporter: Christian Reiter  
 :mega: Explanation from vendor: https://medium.com/shiftcrypto/important-security-news-about-version-4-4-0-upgrade-2449b745be9  
 :dart: Explanation from reporter: https://blog.inhq.net/posts/u2fhid_init_resp-information-leak/  
 
@@ -307,7 +306,7 @@ claims
 :nerd_face: Detail: A side-channel leakage on the row-based OLED display was found. The power consumption of each row-based display cycle depends on the number of illuminated pixels, allowing a partial recovery of display contents. For example, a hardware implant in the USB cable might be able to leverage this behavior to recover confidential secrets such as the PIN and BIP39 mnemonic. In other words, the side-channel is relevant only if the attacker has enough control over the device’s USB connection to make power-consumption measurements and advanced statistical analysis while the secret data is displayed. The side-channel is not relevant in other circumstances, such as a stolen device that is not currently displaying secret data.  
 :eyes: Type: Information leak  
 :poop: Bug: OLED screens consume power based on number of pixels that are on. Mitigated here by making the number of pixels that are on per row when displaying the seed constant  
-:sunglasses: Reporter: Christian Reiter
+:sunglasses: Reporter: Christian Reiter  
 :mega: Explanation from vendor: https://donjon.ledger.com/lsb/006/  
 :dart: Explanation from reporter: https://blog.inhq.net/posts/oled-side-channel-status-summary/  
 
@@ -358,8 +357,8 @@ claims
 
 :office: Vendor: Coldcard    
 :scroll: Title: Ransom attack on Coldcard's receive address verification  
-:nerd_face: Detail: By inserting newlines in the derivation path string sent to the Coldcard, the displayed characters could be split. This could trick users into verifying an address for a keypath that is not easily accessible.
-:poop: Bug: Bad input validation    
+:nerd_face: Detail: By inserting newlines in the derivation path string sent to the Coldcard, the displayed characters could be split. This could trick users into verifying an address for a BIP32 derivation path that is not easily accessible.  
+:poop: Bug: Bad input validation from host   
 :dart: Explanation from reporter: https://thecharlatan.github.io/Ransom-Coldcard/  
 
 :office: Vendor: Shift Cryptosecurity  
