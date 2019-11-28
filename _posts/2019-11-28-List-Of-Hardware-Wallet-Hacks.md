@@ -78,9 +78,10 @@ Description: A specially crafted transaction could contain a change output of an
 :sunglasses: Reporter: Timothee Isnard  
 :mega: Explanation from vendor: https://www.ledger.com/firmware-1-4-deep-dive-security-fixes/  
 
-:office: Vendor: Leder  
-:scroll: Title: Supply chain attack.  
+:office: Vendor: Ledger  
+:scroll: Title: MCU signature verification bypass   
 :nerd_face: Detail: The signature verification of the MCU can be bypassed, allowing an attacker to perform supply chain attacks. It requires a physical access to the device before the generation of the seed.  
+:eyes: Type:  Supply chain attack  
 :poop: Bug: Overall authentication architecture in MCU, fixed with a bunch of small patches  
 :sunglasses: Reporter: Saleem Rashid  
 :mega: Explanation from vendor: https://www.ledger.com/firmware-1-4-deep-dive-security-fixes/  
@@ -90,6 +91,7 @@ Description: A specially crafted transaction could contain a change output of an
 :scroll: Title: Isolation vulnerability  
 :nerd_face: Detail: A malicious app can break the isolation between apps and access sensitive data managed by specific apps such as GPG, U2F or Neo.   
 :poop: Bug: Null pointer dereferencing, pointer length not properly checked, Flash zone not wiped properly after device reset.  
+:eyes: Type: Privilege escelation  
 :sunglasses: Reporter: Sergei Volokitin  
 :mega: Explanation from vendor: https://donjon.ledger.com/lsb/003/  
 :dart: Explanation from reporter: https://i.blackhat.com/us-18/Wed-August-8/us-18-Volokitin-Software-Attacks-On-Hardware-Wallets.pdf  
@@ -107,7 +109,7 @@ Description: A specially crafted transaction could contain a change output of an
 
 :office: Vendor: Trezor  
 :scroll: Title: Message processing error  
-Detai: Specially crafted USB packet could trigger a buffer overflow which could lead to code execution on older firmwares.  
+:nerd_face: Detail: Specially crafted USB packet could trigger a buffer overflow which could lead to code execution on older firmwares.  
 :eyes: Type: Buffer overflow  
 :poop: Bug: USB buffer overflow if the USB message buffer is flooded with specially crafted incoming messages  
 :sunglasses: Reporter: Chrisian Reiter  
@@ -191,7 +193,7 @@ Detai: Specially crafted USB packet could trigger a buffer overflow which could 
 :mega: Explanation from vendor: https://blog.trezor.io/details-about-the-security-updates-in-trezor-one-firmware-1-7-2-3c97adbf121e  
 :dart: Explanation from reporter: https://blog.inhq.net/posts/u2fhid_init_resp-information-leak/  
 
-:office: Vendor: Ledger  
+:office: Vendor: Ledger   
 :scroll: Title: Bitcoin change address injection  
 :nerd_face: Detail: A vulnerability was found in the Bitcoin app allowing an attacker to add an unverified output change address into a legit transaction. It can lead to sending funds to an arbitrary address without requiring an additional confirmation on the device. The original transaction still has to be confirmed though.  
 :poop: Bug: Bad Bitcoin transcation information validation  
@@ -344,7 +346,7 @@ claims
 :office: Vendor: Ledger  
 :scroll: Title: Monero private key retrieval.  
 :nerd_face: Detail: The Monero App for Ledger Nano was found to be vulnerable to a private key retrieval through the use of a malicious Monero Client (desktop application). Some computational elements are encrypted by the Nano S with a key only known to the Monero application, and sent to the desktop client for later use, due to space limitations on the Nano. During the final step of the signature (MLSAG sign), the client sends back some sensitive encrypted elements which the app uses to compute a Schnorr signature. A malicious client can misuse this by replaying earlier elements of this computation, and induce a variant of a nonce-reuse attack (see for example the PS3 Fail). This replay of commands is possible because the key derived by the app to encrypt elements is static, and there is no message authentication.  
-:poop: Bug: Bad MLSA signature implementation   
+:poop: Bug: Bad MLSAG signature implementation   
 :clipboard: Patch: https://github.com/LedgerHQ/ledger-app-monero/commit/5d0658ad6369f3d0ff2d10ee9effa410eb185b98  
 :mega: Explanation from vendor: https://donjon.ledger.com/lsb/007/  
 
@@ -352,12 +354,14 @@ claims
 :scroll: Title: Troublesome Change Outputs   
 :nerd_face: Detail: It is possible to make a valid PSBT file that sends the change left from a transaction to a unknown location. If an attacker had your XPUB, and could change your PSBT file before you sign, they could modify the file so that the “change” (ie. the balance of Bitcoins you are sending back to yourself) goes to an effectively unknown address. If the attacker is profit motivated, they can ransom the knowledge of those change UTXO back to you.   
 :poop: Bug: BIP32 address derivation ransom attack  
+:sunglasses: Reporter: TheCharlatan   
 :mega: Explanation from vendor: https://blog.coinkite.com/troublesome-change/   
 :dart: Explanation from reporter: https://thecharlatan.github.io/Ransom-Coldcard/  
 
 :office: Vendor: Coldcard    
 :scroll: Title: Ransom attack on Coldcard's receive address verification  
 :nerd_face: Detail: By inserting newlines in the derivation path string sent to the Coldcard, the displayed characters could be split. This could trick users into verifying an address for a BIP32 derivation path that is not easily accessible.  
+:sunglasses: Reporter: TheCharlatan  
 :poop: Bug: Bad input validation from host   
 :dart: Explanation from reporter: https://thecharlatan.github.io/Ransom-Coldcard/  
 
