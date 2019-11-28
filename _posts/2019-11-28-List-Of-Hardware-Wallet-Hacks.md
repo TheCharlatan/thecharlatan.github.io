@@ -1,7 +1,7 @@
 _This is a dynamic document and changes as my understanding of these vulnerability changes and as new vulnerabilities get discovered_
 
 What constitutes a hardware wallet hack?   
-I count anything as a "hack" that allows a hacker to change a hardware wallets intended behavior. This means it is not relevant to me if the hack was ever exploited, or if it has received a low likelihood rating from vendors.
+I count anything as a "hack" that allows a hacker to change a hardware wallet's intended behavior. This means it is not relevant to me if the hack was ever exploited, or if it has received a low likelihood rating from vendors.
 
 # 2014
 ### Juli:
