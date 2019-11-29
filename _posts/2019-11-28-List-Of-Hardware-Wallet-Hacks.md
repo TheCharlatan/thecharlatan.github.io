@@ -331,6 +331,7 @@ claims
 :scroll: Title: Blinking pattern mismatch    
 :nerd_face: Detail: The blinking patterns of the BitBox01 reveal important information on the behvaiour of the device  
 :poop: Bug: Bad differentiation between modes for the user  
+:sunglasses: Reporter: Saleem Rashid
 :mega: Explanation from vendor: https://medium.com/shiftcrypto/bitbox-desktop-app-4-9-0-with-bitbox01-firmware-6-1-1-release-1b84c5f9295f  
 
 
@@ -373,6 +374,7 @@ claims
 :scroll: Title: Mobile pairing information leak BitBox01   
 :nerd_face: Detail: ?  
 :poop: Bug: Bad cryptography  
+:sunglasses: Reporter: Saleem Rashid  
 :mega: Explanation from vendor: https://medium.com/shiftcrypto/bitboxapp-4-14-0-5e72575b0819  
 
 
