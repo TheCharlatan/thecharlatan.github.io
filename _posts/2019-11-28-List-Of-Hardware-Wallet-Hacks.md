@@ -3,6 +3,9 @@ _This is a dynamic document and changes as my understanding of these vulnerabili
 What constitutes a hardware wallet hack?   
 I count anything as a "hack" that allows a hacker to change a hardware wallet's intended behavior. This means it is not relevant to me if the hack was ever exploited, or if it has received a low likelihood rating from vendors.
 
+Know of a hack that is not included?  
+Let me know here: https://github.com/TheCharlatan/thecharlatan.github.io  
+
 # 2014
 ### Juli:
 
@@ -108,7 +111,8 @@ Description: A specially crafted transaction could contain a change output of an
 :poop: Bug: USB buffer overflow, during dry-run recovery which recursivly handles packets, a stack overflow can be triggered  
 :sunglasses: Reporter: Christian Reiter  
 :clipboard: Patch: https://github.com/trezor/trezor-firmware/commit/c9113fd3f5fcd78e9e560dbac75ed5aae359eb2d  
-:mega: Explanation from vendor: https://blog.trezor.io/details-about-the-security-updates-in-trezor-one-firmware-1-6-2-a3b25b668e98  
+:mega: Explanation from vendor: https://blog.trezor.io/details-about-the-security-updates-in-trezor-one-firmware-1-6-2-a3b25b668e98   
+:dart: Explanation from reporter: https://blog.inhq.net/posts/trezor-one-dry-run-recovery-stack-overflow/  
 
 :office: Vendor: Trezor  
 :scroll: Title: Message processing error  
@@ -140,7 +144,6 @@ Description: A specially crafted transaction could contain a change output of an
 :sunglasses: Reporter: Saleem Rashid   
 :mega: Explanation from vendor: https://shiftcrypto.ch/bitbox01/disclosure/   
 :dart: Explanation from reporter: https://saleemrashid.com/2018/11/26/breaking-into-bitbox   
-
 
 
 ### August
@@ -293,6 +296,15 @@ claims
 :poop: Bug: Bad interpretation of BIP32 and BIP44 standard  
 :mega: Explanation from vendor: https://medium.com/shiftcrypto/bitbox-desktop-app-4-6-0-with-firmware-6-0-3-release-ec46937afe7c  https://medium.com/shiftcrypto/bitbox-desktop-app-4-5-0-with-firmware-6-0-2-release-fd77f8186a29
 
+:office: Vendor: Satoshi Labs   
+:iphone: Product: Trezor 1  
+:scroll: Title: Breaking Trezor One with Sice Channel Attacks  
+:nerd_face: Detail: A Side Channel Attack on PIN verification allows an attacker with a stolen Trezor One to retrieve the correct value of the PIN within a few minutes.  
+:eyes: Type: Information leak    
+:poop: Bug: PIN validity was checked in constant time, but in sequence. The validity check thus exposed a unique side-channel signature during verification.  
+:sunglasses: Reporter: Ledger Donjon    
+:mega: Explanation from vendor: https://blog.trezor.io/our-response-to-ledgers-mitbitcoinexpo-findings-194f1b0a97d4  
+:dart: Explanation from reporter: https://donjon.ledger.com/Breaking-Trezor-One-with-SCA/  
 
 ### April
 
@@ -334,6 +346,29 @@ claims
 :sunglasses: Reporter: Saleem Rashid
 :mega: Explanation from vendor: https://medium.com/shiftcrypto/bitbox-desktop-app-4-9-0-with-bitbox01-firmware-6-1-1-release-1b84c5f9295f  
 
+### Juli
+
+:office: Vendor: Shapeshift, Satoshi Labs  
+:iphone: Product: Keepkey, Trezor One, Trezor T  
+:scroll: Title: Unfixable Seed Extraction on Trezor - A practical and reliable attack  
+:nerd_face: Detail: An attacker with a stolen device can extract the seed from the device. It takes less than 5 minutes and the necessary materials cost around 100$. This vulnerability affects Trezor One, Trezor T, Keepkey and all other Trezor clones. Unfortunately, this vulnerability cannot be patched and, for this reason, we decided not to give technical details about the attack to mitigate a possible exploitation in the field. However SatoshiLabs and Keepkey suggested users to either exclude physical attacks from their threat model, or to use a passphrase.  
+:eyes: Type: Hardware Exploit    
+:poop: Bug: Not clear, but seems to be a fundamental bug in the STM32F205 chip. The bug cannot be fixed and the vendors seemed to have changed their threatmodel now to not include localized hardware attacks. Hardware security is only guaranteed with the employment of an additional seed phrase.  
+:sunglasses: Reporter: Ledger Donjon  
+:mega: Explanation from vendor: No official explanation from Trezor; explanation from Keepkey: https://medium.com/shapeshift-stories/responding-to-ledgers-2019-breakingbitcoin-findings-4213849a4fb   
+:dart: Explanation from reporter: https://donjon.ledger.com/Unfixable-Key-Extraction-Attack-on-Trezor/  
+
+### August
+
+:office: Vendor: Shapeshift  
+:iphone: Product: Keepkey  
+:scroll: Title: OLED screen side-channel vulnerability.    
+:nerd_face: Detail: Same as with Trezor, Ledger, Coldcard and BitBox02   
+:eyes: Type: Information leak    
+:poop: Bug: OLED screens consume power based on number of pixels that are on. Keepkey alleges that since they show multiple seedwords at once, the vulnerability does not apply to them.  
+:sunglasses: Reporter: Christian Reiter    
+:mega: Explanation from vendor: https://medium.com/shapeshift-stories/shapeshift-security-update-5b0dd45c93db  
+:dart: Explanation from reporter: https://blog.inhq.net/posts/oled-side-channel-status-summary/    
 
 ### October
 
@@ -377,6 +412,31 @@ claims
 :sunglasses: Reporter: Saleem Rashid  
 :mega: Explanation from vendor: https://medium.com/shiftcrypto/bitboxapp-4-14-0-5e72575b0819  
 
+### December
+
+:office: Vendor: Shapeshift  
+:iphone: Product: Keepkey  
+:scroll: Title: STM32 glitch attack  
+:nerd_face: Detail: Same attack as executed by wallet.fail team on the Trezor, but now reproduced on Keepkey.  
+:poop: Bug: STM32F205 hardware weakness  
+:sunglasses: Reporter: Kraken  
+:darf: Explanation from reporter: https://blog.kraken.com/post/3248/flaw-found-in-keepkey-crypto-hardware-wallet-part-2/
+
+:office: Vendor: Shapeshift  
+:iphone: Product: Keepkey  
+:scroll: Title: USB Packet Handling Bug  
+:nerd_face: Detail: Insufficient checks in the USB packet handling of the ShapeShift KeepKey hardware wallet before firmware 6.2.2 allow out-of-bounds writes on the stack via crafted messages. The vulnerability could allow code execution or other forms of impact. It can be triggered by unauthenticated attackers and the interface is reachable via WebUSB.  
+:poop: Bug: USB buffer overflow  
+:sunglasses: Reporter: Christian Reiter  
+:mega: Explanation from vendor: https://medium.com/shapeshift-stories/shapeshift-security-update-8ec89bb1b4e3  
+
+:office: Vendor: Shapeshift  
+:iphone: Product: Keepkey  
+:scroll: Title: Mnemonic Wipe Bug  
+:nerd_face: Detail: Insufficient checks in the finite state machine of the ShapeShift KeepKey hardware wallet before firmware 6.2.2 allow a partial reset of cryptographic secrets to known values via crafted messages. Notably, this breaks the security of U2F for new server registrations and invalidates existing registrations. This vulnerability can be exploited by unauthenticated attackers and the interface is reachable via WebUSB.   
+:poop: Bug: Secrets not wiped fully, unclear at this time how this was achieved.  
+:sunglasses: Reporter: Christian Reiter   
+:mega: Explanation from vendor: https://medium.com/shapeshift-stories/shapeshift-security-update-8ec89bb1b4e3  
 
 ## Footnotes
 ### Relevant blogs:
@@ -387,10 +447,6 @@ wallet.fail: https://wallet.fail/
 ### :office: Vendor Security Programs:
 Trezor: https://trezor.io/security/  
 Ledger: https://donjon.ledger.com/bounty/  
-Shift Cryptosecurity: https://shiftcrypto.ch/policies/bug-bounty-policy/
-
-
-
-
-
+Shift Cryptosecurity: https://shiftcrypto.ch/policies/bug-bounty-policy/  
+Shapeshift: https://medium.com/shapeshift-stories/shapeshift-security-update-8ec89bb1b4e3
 
