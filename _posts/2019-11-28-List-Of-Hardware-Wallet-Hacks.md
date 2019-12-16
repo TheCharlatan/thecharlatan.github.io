@@ -1,10 +1,15 @@
+---
+layout: post
+title: List of Hardware Wallet Hacks
+---
+
 _This is a dynamic document and changes as my understanding of these vulnerability changes and as new vulnerabilities get discovered_
 
 What constitutes a hardware wallet hack?   
 I count anything as a "hack" that allows a hacker to change a hardware wallet's intended behavior. This means it is not relevant to me if the hack was ever exploited, or if it has received a low likelihood rating from vendors.
 
 Know of a hack that is not included?  
-Let me know here: https://github.com/TheCharlatan/thecharlatan.github.io  
+Let me know here: <https://github.com/TheCharlatan/thecharlatan.github.io>  
 
 # 2014
 ### Juli:
@@ -16,7 +21,7 @@ Description: A specially crafted transaction could extract the private key
 :eyes: Type: Transaction validation attack with authentication  
 :poop: Bug: Buffer Overflow  
 :sunglasses: Reporter: Nicolas Bacca (Ledger)  
-:clipboard: Patch: https://github.com/trezor/trezor-firmware/commit/524f2a957afb66e6a869384aceaca1cb7f9cba60  
+:clipboard: Patch: <https://github.com/trezor/trezor-firmware/commit/524f2a957afb66e6a869384aceaca1cb7f9cba60>  
 
 # 2015
 ### February:
@@ -27,7 +32,7 @@ Description: A specially crafted transaction could contain a change output of an
 :eyes: Type: Transaction validation attack with authentication   
 :poop: Bug: Insufficient transaction checks  
 :sunglasses: Reporter: Nicolas Bacca (Ledger)  
-:clipboard: Patch: https://github.com/trezor/trezor-firmware/commit/137a60ce017c402ac160258bcc4b5f7b5aba0560  
+:clipboard: Patch: <https://github.com/trezor/trezor-firmware/commit/137a60ce017c402ac160258bcc4b5f7b5aba0560>  
 
 ### March:
 
@@ -37,8 +42,8 @@ Description: A specially crafted transaction could contain a change output of an
 :eyes: Type: Signal noise / power analysis side channel  
 :poop: Bug: Insufficient PIN protection for derivation of keys, minimize the usage of nested loops to increase const'ness of execution time  
 :sunglasses: Reporter: Jochen Hoenicke  
-:clipboard: Patch: https://github.com/trezor/trezor-firmware/commit/7c6d2fe395c8475efbc93257892f0efac3d1511c  
-:dart: Explanation from reporter: https://jochen-hoenicke.de/crypto/trezor-power-analysis/  
+:clipboard: Patch: <https://github.com/trezor/trezor-firmware/commit/7c6d2fe395c8475efbc93257892f0efac3d1511c>   
+:dart: Explanation from reporter: <https://jochen-hoenicke.de/crypto/trezor-power-analysis/>  
 
 # 2017
 ### August:
@@ -49,9 +54,9 @@ Description: A specially crafted transaction could contain a change output of an
 :eyes: Type: Platform reset attack  
 :poop: Bug: (see detail)  
 :sunglasses: Reporter: Sunny  
-:clipboard: Patch: https://github.com/trezor/trezor-firmware/commit/98e617d8740b85ae01d7d6e0dd3f49e66057a210  
-:mega: Explanation from vendor: https://blog.trezor.io/fixing-physical-memory-access-issue-in-trezor-2b9b46bb4522  
-:dart: Explanation from reporter: https://saleemrashid.com/2017/08/17/extracting-trezor-secrets-sram/  
+:clipboard: Patch: <https://github.com/trezor/trezor-firmware/commit/98e617d8740b85ae01d7d6e0dd3f49e66057a210>  
+:mega: Explanation from vendor: <https://blog.trezor.io/fixing-physical-memory-access-issue-in-trezor-2b9b46bb4522>  
+:dart: Explanation from reporter: <https://saleemrashid.com/2017/08/17/extracting-trezor-secrets-sram/>  
 
 # 2018 
 ### February:
@@ -62,8 +67,8 @@ Description: A specially crafted transaction could contain a change output of an
 :eyes: Type: Supply chain attack  
 :poop: Bug: Bad chip configuration  
 :sunglasses: Reporter: Saleem Rashid  
-:clipboard: Patch: https://github.com/trezor/trezor-firmware/commit/9588e8f2736b60916f51e470deb18f55112a6ebc  
-:mega: Explanation from vendor: https://blog.trezor.io/trezor-one-firmware-update-1-6-1-eecd0534ab95  
+:clipboard: Patch: <https://github.com/trezor/trezor-firmware/commit/9588e8f2736b60916f51e470deb18f55112a6ebc>  
+:mega: Explanation from vendor: <https://blog.trezor.io/trezor-one-firmware-update-1-6-1-eecd0534ab95>  
 
 :office: Vendor: Shift Cryptosecurity  
 :iphone: Product: BitBox01  
@@ -72,8 +77,8 @@ Description: A specially crafted transaction could contain a change output of an
 :eyes: Type: API remote attack   
 :poop: Bug: Bad cryptography for the wallet vs hidden wallet derivation   
 :sunglasses: Reporter: Saleem Rashid   
-:mega: Explanation from vendor: https://shiftcrypto.ch/bitbox01/disclosure   
-:dart: Explanation from reporter: https://saleemrashid.com/2018/11/26/breaking-into-bitbox   
+:mega: Explanation from vendor: <https://shiftcrypto.ch/bitbox01/disclosure>   
+:dart: Explanation from reporter: <https://saleemrashid.com/2018/11/26/breaking-into-bitbox>   
 
 ### March:
 
@@ -82,7 +87,7 @@ Description: A specially crafted transaction could contain a change output of an
 :nerd_face: Detail: A padding oracle attack was found on the Secure Channel established between the device and Ledger’s HSM. It allows an attacker to decrypt the firmware updates.   
 :poop: Bug: Bad padding of messages between MCU and SC  
 :sunglasses: Reporter: Timothee Isnard  
-:mega: Explanation from vendor: https://www.ledger.com/firmware-1-4-deep-dive-security-fixes/  
+:mega: Explanation from vendor: <https://www.ledger.com/firmware-1-4-deep-dive-security-fixes/>  
 
 :office: Vendor: Ledger  
 :scroll: Title: MCU signature verification bypass   
@@ -90,8 +95,8 @@ Description: A specially crafted transaction could contain a change output of an
 :eyes: Type:  Supply chain attack  
 :poop: Bug: Overall authentication architecture in MCU, fixed with a bunch of small patches  
 :sunglasses: Reporter: Saleem Rashid  
-:mega: Explanation from vendor: https://www.ledger.com/firmware-1-4-deep-dive-security-fixes/  
-:dart: Explanation from reporter: https://saleemrashid.com/2018/03/20/breaking-ledger-security-model/  
+:mega: Explanation from vendor: <https://www.ledger.com/firmware-1-4-deep-dive-security-fixes/>  
+:dart: Explanation from reporter: <https://saleemrashid.com/2018/03/20/breaking-ledger-security-model/>  
 
 :office: Vendor: Ledger  
 :scroll: Title: Isolation vulnerability  
@@ -99,8 +104,8 @@ Description: A specially crafted transaction could contain a change output of an
 :poop: Bug: Null pointer dereferencing, pointer length not properly checked, Flash zone not wiped properly after device reset.  
 :eyes: Type: Privilege escelation  
 :sunglasses: Reporter: Sergei Volokitin  
-:mega: Explanation from vendor: https://donjon.ledger.com/lsb/003/  
-:dart: Explanation from reporter: https://i.blackhat.com/us-18/Wed-August-8/us-18-Volokitin-Software-Attacks-On-Hardware-Wallets.pdf  
+:mega: Explanation from vendor: <https://donjon.ledger.com/lsb/003/>  
+:dart: Explanation from reporter: <https://i.blackhat.com/us-18/Wed-August-8/us-18-Volokitin-Software-Attacks-On-Hardware-Wallets.pdf>  
 
 ### May
 
@@ -110,9 +115,9 @@ Description: A specially crafted transaction could contain a change output of an
 :eyes: Type: Stack overflow  
 :poop: Bug: USB buffer overflow, during dry-run recovery which recursivly handles packets, a stack overflow can be triggered  
 :sunglasses: Reporter: Christian Reiter  
-:clipboard: Patch: https://github.com/trezor/trezor-firmware/commit/c9113fd3f5fcd78e9e560dbac75ed5aae359eb2d  
-:mega: Explanation from vendor: https://blog.trezor.io/details-about-the-security-updates-in-trezor-one-firmware-1-6-2-a3b25b668e98   
-:dart: Explanation from reporter: https://blog.inhq.net/posts/trezor-one-dry-run-recovery-stack-overflow/  
+:clipboard: Patch: <https://github.com/trezor/trezor-firmware/commit/c9113fd3f5fcd78e9e560dbac75ed5aae359eb2d>  
+:mega: Explanation from vendor: <https://blog.trezor.io/details-about-the-security-updates-in-trezor-one-firmware-1-6-2-a3b25b668e98>   
+:dart: Explanation from reporter: <https://blog.inhq.net/posts/trezor-one-dry-run-recovery-stack-overflow/>  
 
 :office: Vendor: Trezor  
 :scroll: Title: Message processing error  
@@ -120,8 +125,8 @@ Description: A specially crafted transaction could contain a change output of an
 :eyes: Type: Buffer overflow  
 :poop: Bug: USB buffer overflow if the USB message buffer is flooded with specially crafted incoming messages  
 :sunglasses: Reporter: Chrisian Reiter  
-:clipboard: Patch: https://github.com/trezor/trezor-firmware/commit/c9113fd3f5fcd78e9e560dbac75ed5aae359eb2d  
-:mega: Explanation from vendor: https://github.com/trezor/trezor-firmware/commit/c9113fd3f5fcd78e9e560dbac75ed5aae359eb2d  
+:clipboard: Patch: <https://github.com/trezor/trezor-firmware/commit/c9113fd3f5fcd78e9e560dbac75ed5aae359eb2d>  
+:mega: Explanation from vendor: <https://github.com/trezor/trezor-firmware/commit/c9113fd3f5fcd78e9e560dbac75ed5aae359eb2d>  
 
 ### July
 
@@ -132,8 +137,8 @@ Description: A specially crafted transaction could contain a change output of an
 :eyes: Type: Information leak     
 :poop: Bug: Secrets not cleared after wallet reset  
 :sunglasses: Reporter: Saleem Rashid   
-:mega: Explanation from vendor: https://shiftcrypto.ch/bitbox01/disclosure/   
-:dart: Explanation from reporter: https://saleemrashid.com/2018/11/26/breaking-into-bitbox   
+:mega: Explanation from vendor: <https://shiftcrypto.ch/bitbox01/disclosure/>   
+:dart: Explanation from reporter: <https://saleemrashid.com/2018/11/26/breaking-into-bitbox>   
 
 :office: Vendor: Shift Cryptosecurity  
 :iphone: Product: BitBox01   
@@ -142,8 +147,8 @@ Description: A specially crafted transaction could contain a change output of an
 :eyes: Type: Information leak     
 :poop: Bug: Bad Crypto  
 :sunglasses: Reporter: Saleem Rashid   
-:mega: Explanation from vendor: https://shiftcrypto.ch/bitbox01/disclosure/   
-:dart: Explanation from reporter: https://saleemrashid.com/2018/11/26/breaking-into-bitbox   
+:mega: Explanation from vendor: <https://shiftcrypto.ch/bitbox01/disclosure/>   
+:dart: Explanation from reporter: <https://saleemrashid.com/2018/11/26/breaking-into-bitbox>   
 
 
 ### August
@@ -154,8 +159,8 @@ Description: A specially crafted transaction could contain a change output of an
 :eyes: Type: Supply chain attack  
 :poop: Bug: MPU rule could be circumnavigated  
 :sunglasses: Reporter: Sunny  
-:clipboard: Patch: https://github.com/trezor/trezor-firmware/commit/fdd5cbe20271634dc9ba4424ae40f1d11332cdf2  
-:mega: Explanation from vendor: https://blog.trezor.io/trezor-one-firmware-update-1-6-3-73894c0506d  
+:clipboard: Patch: <https://github.com/trezor/trezor-firmware/commit/fdd5cbe20271634dc9ba4424ae40f1d11332cdf2>  
+:mega: Explanation from vendor: <https://blog.trezor.io/trezor-one-firmware-update-1-6-3-73894c0506d>  
 
 ### September
 
@@ -165,8 +170,8 @@ Description: A specially crafted transaction could contain a change output of an
 :eyes: Type: Buffer overflow  
 :poop: Bug: No sufficient out of bounds check  
 :sunglasses: Reporter: Christian Reiter  
-:clipboard: Patch: https://github.com/trezor/trezor-firmware/commit/5c6b47288323a6cafe331304d2708a3c2a45f4b0  
-:mega: Explanation from vendor: https://blog.trezor.io/details-about-the-security-updates-in-trezor-one-firmware-1-7-1-5c34278425d8  
+:clipboard: Patch: <https://github.com/trezor/trezor-firmware/commit/5c6b47288323a6cafe331304d2708a3c2a45f4b0>  
+:mega: Explanation from vendor: <https://blog.trezor.io/details-about-the-security-updates-in-trezor-one-firmware-1-7-1-5c34278425d8>  
 
 ### October
 
@@ -176,8 +181,8 @@ Description: A specially crafted transaction could contain a change output of an
 :eyes: Type: Buffer/stack overflow  
 :poop: Bug: No sufficient out of bounds check  
 :sunglasses: Reporter: Gabrial Campana  
-:clipboard: Patch: https://github.com/trezor/trezor-firmware/commit/2bbbc3e15573294c6dd0273d2a8542ba42507eb0  
-:mega: Explanation from vendor: https://blog.trezor.io/details-about-the-security-updates-in-trezor-one-firmware-1-7-1-5c34278425d8  
+:clipboard: Patch: <https://github.com/trezor/trezor-firmware/commit/2bbbc3e15573294c6dd0273d2a8542ba42507eb0>  
+:mega: Explanation from vendor: <https://blog.trezor.io/details-about-the-security-updates-in-trezor-one-firmware-1-7-1-5c34278425d8>  
 
 :office: Vendor: Trezor  
 :scroll: Title: Side-channel analysis (SCA) of PIN comparison  
@@ -185,7 +190,7 @@ Description: A specially crafted transaction could contain a change output of an
 :eyes: Type: Information leak  
 :poop: Bug: Naive implementation of PIN storage  
 :sunglasses: Reporter: Charles Guillemet  
-:clipboard: Patch: https://github.com/trezor/trezor-firmware/commit/4f32cb508383ec0e65843d037f6ac6473a668359  
+:clipboard: Patch: <https://github.com/trezor/trezor-firmware/commit/4f32cb508383ec0e65843d037f6ac6473a668359>  
 
 ### November
 
@@ -195,17 +200,17 @@ Description: A specially crafted transaction could contain a change output of an
 :eyes: Type: Information leak  
 :poop: Bug: Bad struct memory layout  
 :sunglasses: Reporter: Christian Reiter  
-:clipboard: Patch: https://github.com/trezor/trezor-firmware/commit/0b26c529ec49daf584f322f3ef959c79694c8cf5  
-:mega: Explanation from vendor: https://blog.trezor.io/details-about-the-security-updates-in-trezor-one-firmware-1-7-2-3c97adbf121e  
-:dart: Explanation from reporter: https://blog.inhq.net/posts/u2fhid_init_resp-information-leak/  
+:clipboard: Patch: <https://github.com/trezor/trezor-firmware/commit/0b26c529ec49daf584f322f3ef959c79694c8cf5>  
+:mega: Explanation from vendor: <https://blog.trezor.io/details-about-the-security-updates-in-trezor-one-firmware-1-7-2-3c97adbf121e>  
+:dart: Explanation from reporter: <https://blog.inhq.net/posts/u2fhid_init_resp-information-leak/>  
 
 :office: Vendor: Ledger   
 :scroll: Title: Bitcoin change address injection  
 :nerd_face: Detail: A vulnerability was found in the Bitcoin app allowing an attacker to add an unverified output change address into a legit transaction. It can lead to sending funds to an arbitrary address without requiring an additional confirmation on the device. The original transaction still has to be confirmed though.  
 :poop: Bug: Bad Bitcoin transcation information validation  
 :sunglasses: Reporter: Sergey Lappo  
-:mega: Explanation from vendor: https://donjon.ledger.com/lsb/004/  
-:dart: Explanation from reporter: https://sergeylappo.github.io/ledger-hack/  
+:mega: Explanation from vendor: <https://donjon.ledger.com/lsb/004/>  
+:dart: Explanation from reporter: <https://sergeylappo.github.io/ledger-hack/>  
 
 :office: Vendor: Shift Cryptosecurity  
 :iphone: Product: BitBox01   
@@ -214,7 +219,7 @@ Description: A specially crafted transaction could contain a change output of an
 :eyes: Type: Break of existing security model, lead to re-assesment of public security claims  
 :poop: Bug: Bad secure chip configuration.  
 :sunglasses: Reporter: Saleem Rashid   
-:dart: Explanation from reporter: https://saleemrashid.com/2018/11/26/breaking-into-bitbox/  
+:dart: Explanation from reporter: <https://saleemrashid.com/2018/11/26/breaking-into-bitbox/>  
 
 ### December
 
@@ -225,7 +230,7 @@ Description: A specially crafted transaction could contain a change output of an
 :eyes: Type: Break on-hardware verification   
 :poop: Bug: Usage of a plain AES-256-CBC cipher for authentication. Never use encryption for authentication.   
 :sunglasses: Reporter: Saleem Rashid   
-:mega: Explanation from vendor: https://shiftcrypto.ch/bitbox01/disclosure/  
+:mega: Explanation from vendor: <https://shiftcrypto.ch/bitbox01/disclosure/>  
 
 
 :office: Vendor: Shift Cryptosecurity  
@@ -235,7 +240,7 @@ Description: A specially crafted transaction could contain a change output of an
 :eyes: Type: Break on-hardware verification   
 :poop: Bug: Usage of a plain AES-256-CBC cipher for authentication. Never use encryption for authentication.   
 :sunglasses: Reporter: Saleem Rashid   
-:mega: Explanation from vendor: https://shiftcrypto.ch/bitbox01/disclosure/  
+:mega: Explanation from vendor: <https://shiftcrypto.ch/bitbox01/disclosure/>  
 
 :office: Vendor: Trezor  
 :scroll: Title: SRAM Dump during the firmware update  
@@ -243,17 +248,17 @@ Description: A specially crafted transaction could contain a change output of an
 :eyes: Type: Information leak  
 :poop: Bug: Sensitive values in RAM during firmware update  
 :sunglasses: Reporter: wallet.fail   
-:clipboard: Patch: https://github.com/trezor/trezor-firmware/commit/07231d936e41335b3ec44c4c6eb336be006890d0  
-:mega: Explanation from vendor: https://blog.trezor.io/details-of-security-updates-for-trezor-one-firmware-1-8-0-and-trezor-model-t-firmware-2-1-0-408e59dc012  
-:dart: Explanation from reporter: https://media.ccc.de/v/35c3-9563-wallet_fail  
+:clipboard: Patch: <https://github.com/trezor/trezor-firmware/commit/07231d936e41335b3ec44c4c6eb336be006890d0>  
+:mega: Explanation from vendor: <https://blog.trezor.io/details-of-security-updates-for-trezor-one-firmware-1-8-0-and-trezor-model-t-firmware-2-1-0-408e59dc012>  
+:dart: Explanation from reporter: <https://media.ccc.de/v/35c3-9563-wallet_fail>  
 
 :office: Vendor: Ledger  
 :scroll: Title: MCU Bootloader verification bypass.  
 :nerd_face: Detail: The signature verification of the Ledger Nano S MCU can be bypassed, allowing an attacker to install an arbitrary firmware on the MCU.  
 :poop: Bug: f00dbabe  
 :sunglasses: Reporter: wallet.fail  
-:mega: Explanation from vendor: https://donjon.ledger.com/lsb/005/  
-:dart: Explanation from reporter: https://media.ccc.de/v/35c3-9563-wallet_fail  
+:mega: Explanation from vendor: <https://donjon.ledger.com/lsb/005/>  
+:dart: Explanation from reporter: <https://media.ccc.de/v/35c3-9563-wallet_fail>  
 
 # 2019
 ### January
@@ -264,8 +269,8 @@ Description: A specially crafted transaction could contain a change output of an
 :eyes: Type: Information leak  
 :poop: Bug: Outgoing packets too big, MPU did not protect sectors around the actual storage sectors, which would have halted execution        
 :sunglasses: Reporter: Colin O'Flynn  
-:clipboard: Patch: https://github.com/trezor/trezor-firmware/commit/22f37e81a3270da5e8e5d6c55abc8f15f3a35567  
-:mega: Explanation from vendor: https://blog.trezor.io/details-of-security-updates-for-trezor-one-firmware-1-8-0-and-trezor-model-t-firmware-2-1-0-408e59dc012  
+:clipboard: Patch: <https://github.com/trezor/trezor-firmware/commit/22f37e81a3270da5e8e5d6c55abc8f15f3a35567>  
+:mega: Explanation from vendor: <https://blog.trezor.io/details-of-security-updates-for-trezor-one-firmware-1-8-0-and-trezor-model-t-firmware-2-1-0-408e59dc012>  
 
 :office: Vendor: Coldcard  
 :scroll: Title: Attack on Coldcard short PINs    
@@ -273,8 +278,8 @@ Description: A specially crafted transaction could contain a change output of an
 :eyes: Type: Bypass of authentication    
 :poop: Bug: Bad secure chip answer verification  
 :sunglasses: Reporter: Lazy Ninja  
-:mega: Explanation from vendor: https://blog.coinkite.com/use-long-pins/  
-:dart: Explanation from reporter: https://www.cryptolazyninja.com/2019/03/coldcard-wallet-short-pin-brute-force.html
+:mega: Explanation from vendor: <https://blog.coinkite.com/use-long-pins/>  
+:dart: Explanation from reporter: <https://www.cryptolazyninja.com/2019/03/coldcard-wallet-short-pin-brute-force.html>  
 
 :office: Vendor: Shift Cryptosecurity  
 :iphone: Product: BitBox01   
@@ -283,8 +288,8 @@ Description: A specially crafted transaction could contain a change output of an
 claims  
 :poop: Bug: Bad struct memory layout  
 :sunglasses: Reporter: Christian Reiter  
-:mega: Explanation from vendor: https://medium.com/shiftcrypto/important-security-news-about-version-4-4-0-upgrade-2449b745be9  
-:dart: Explanation from reporter: https://blog.inhq.net/posts/u2fhid_init_resp-information-leak/  
+:mega: Explanation from vendor: <https://medium.com/shiftcrypto/important-security-news-about-version-4-4-0-upgrade-2449b745be9>  
+:dart: Explanation from reporter: <https://blog.inhq.net/posts/u2fhid_init_resp-information-leak/>  
 
 
 ### March
@@ -294,7 +299,7 @@ claims
 :scroll: Title: BIP32 address derivation ransom attack  
 :nerd_face: Detail: No restrictions on possible BIP32 key paths led to a ransom attack  
 :poop: Bug: Bad interpretation of BIP32 and BIP44 standard  
-:mega: Explanation from vendor: https://medium.com/shiftcrypto/bitbox-desktop-app-4-6-0-with-firmware-6-0-3-release-ec46937afe7c  https://medium.com/shiftcrypto/bitbox-desktop-app-4-5-0-with-firmware-6-0-2-release-fd77f8186a29
+:mega: Explanation from vendor: <https://medium.com/shiftcrypto/bitbox-desktop-app-4-6-0-with-firmware-6-0-3-release-ec46937afe7c> <https://medium.com/shiftcrypto/bitbox-desktop-app-4-5-0-with-firmware-6-0-2-release-fd77f8186a29>  
 
 :office: Vendor: Satoshi Labs   
 :iphone: Product: Trezor 1  
@@ -303,8 +308,8 @@ claims
 :eyes: Type: Information leak    
 :poop: Bug: PIN validity was checked in constant time, but in sequence. The validity check thus exposed a unique side-channel signature during verification.  
 :sunglasses: Reporter: Ledger Donjon    
-:mega: Explanation from vendor: https://blog.trezor.io/our-response-to-ledgers-mitbitcoinexpo-findings-194f1b0a97d4  
-:dart: Explanation from reporter: https://donjon.ledger.com/Breaking-Trezor-One-with-SCA/  
+:mega: Explanation from vendor: <https://blog.trezor.io/our-response-to-ledgers-mitbitcoinexpo-findings-194f1b0a97d4>  
+:dart: Explanation from reporter: <https://donjon.ledger.com/Breaking-Trezor-One-with-SCA/>  
 
 ### April
 
@@ -314,9 +319,9 @@ claims
 :eyes: Type: Information leak  
 :poop: Bug: OLED screens consume power based on number of pixels that are on. Mitigated here by making the number of pixels that are on per row when displaying the seed constant  
 :sunglasses: Reporter: Christian Reiter  
-:clipboard: Patch: https://github.com/trezor/trezor-firmware/commit/f16c941ed4ac3c2e2c401de931249d0b2f34c29b  
-:mega: Explanation from vendor: https://blog.trezor.io/details-of-the-oled-vulnerability-and-its-mitigation-d331c4e2001a  
-:dart: Explanation from reporter: https://blog.inhq.net/posts/oled-side-channel-status-summary/  
+:clipboard: Patch: <https://github.com/trezor/trezor-firmware/commit/f16c941ed4ac3c2e2c401de931249d0b2f34c29b>  
+:mega: Explanation from vendor: <https://blog.trezor.io/details-of-the-oled-vulnerability-and-its-mitigation-d331c4e2001a>  
+:dart: Explanation from reporter: <https://blog.inhq.net/posts/oled-side-channel-status-summary/>  
 
 :office: Vendor: Ledger  
 :scroll: Title: OLED screen side-channel vulnerability.  
@@ -324,8 +329,8 @@ claims
 :eyes: Type: Information leak  
 :poop: Bug: OLED screens consume power based on number of pixels that are on. Mitigated here by making the number of pixels that are on per row when displaying the seed constant  
 :sunglasses: Reporter: Christian Reiter  
-:mega: Explanation from vendor: https://donjon.ledger.com/lsb/006/  
-:dart: Explanation from reporter: https://blog.inhq.net/posts/oled-side-channel-status-summary/  
+:mega: Explanation from vendor: <https://donjon.ledger.com/lsb/006/>  
+:dart: Explanation from reporter: <https://blog.inhq.net/posts/oled-side-channel-status-summary/>  
 
 :office: Vendor: Coldcard  
 :scroll: Title: Possible Display Information Leak    
@@ -333,8 +338,8 @@ claims
 :eyes: Type: Information leak  
 :poop: Bug: OLED screens consume power based on number of pixels that are on. Mitigated here by making the number of pixels that are on per row when displaying the seed constant  
 :sunglasses: Reporter: Christian Reiter  
-:mega: Explanation from vendor: https://blog.coinkite.com/noise-troll/   
-:dart: Explanation from reporter: https://blog.inhq.net/posts/oled-side-channel-status-summary/  
+:mega: Explanation from vendor: <https://blog.coinkite.com/noise-troll/>   
+:dart: Explanation from reporter: <https://blog.inhq.net/posts/oled-side-channel-status-summary/>  
 
 ### June
 
@@ -344,7 +349,7 @@ claims
 :nerd_face: Detail: The blinking patterns of the BitBox01 reveal important information on the behvaiour of the device  
 :poop: Bug: Bad differentiation between modes for the user  
 :sunglasses: Reporter: Saleem Rashid
-:mega: Explanation from vendor: https://medium.com/shiftcrypto/bitbox-desktop-app-4-9-0-with-bitbox01-firmware-6-1-1-release-1b84c5f9295f  
+:mega: Explanation from vendor: <https://medium.com/shiftcrypto/bitbox-desktop-app-4-9-0-with-bitbox01-firmware-6-1-1-release-1b84c5f9295f>  
 
 ### Juli
 
@@ -355,8 +360,8 @@ claims
 :eyes: Type: Hardware Exploit    
 :poop: Bug: Not clear, but seems to be a fundamental bug in the STM32F205 chip. The bug cannot be fixed and the vendors seemed to have changed their threatmodel now to not include localized hardware attacks. Hardware security is only guaranteed with the employment of an additional seed phrase.  
 :sunglasses: Reporter: Ledger Donjon  
-:mega: Explanation from vendor: No official explanation from Trezor; explanation from Keepkey: https://medium.com/shapeshift-stories/responding-to-ledgers-2019-breakingbitcoin-findings-4213849a4fb   
-:dart: Explanation from reporter: https://donjon.ledger.com/Unfixable-Key-Extraction-Attack-on-Trezor/  
+:mega: Explanation from vendor: No official explanation from Trezor; explanation from Keepkey: <https://medium.com/shapeshift-stories/responding-to-ledgers-2019-breakingbitcoin-findings-4213849a4fb>   
+:dart: Explanation from reporter: <https://donjon.ledger.com/Unfixable-Key-Extraction-Attack-on-Trezor/>  
 
 ### August
 
@@ -367,8 +372,8 @@ claims
 :eyes: Type: Information leak    
 :poop: Bug: OLED screens consume power based on number of pixels that are on. Keepkey alleges that since they show multiple seedwords at once, the vulnerability does not apply to them.  
 :sunglasses: Reporter: Christian Reiter    
-:mega: Explanation from vendor: https://medium.com/shapeshift-stories/shapeshift-security-update-5b0dd45c93db  
-:dart: Explanation from reporter: https://blog.inhq.net/posts/oled-side-channel-status-summary/    
+:mega: Explanation from vendor: <https://medium.com/shapeshift-stories/shapeshift-security-update-5b0dd45c93db>  
+:dart: Explanation from reporter: <https://blog.inhq.net/posts/oled-side-channel-status-summary/>    
 
 ### October
 
@@ -378,31 +383,31 @@ claims
 :eyes: Type: Missing Check  
 :poop: Bug: Input and output Bitcoin transaction fingerprints were not sufficiently checked.  
 :sunglasses: Reporter: Marko Bencun  
-:clipboard: Patch: https://github.com/trezor/trezor-firmware/commit/8eb6ce08995514c67d175b7197feeadeccc48ff0  
-:mega: Explanation from vendor: https://blog.trezor.io/details-of-the-multisig-change-address-issue-and-its-mitigation-6370ad73ed2a  
-:dart: Explanation from reporter: https://medium.com/shiftcrypto/a-remote-theft-attack-on-trezor-model-t-44127cd7fb5a  
+:clipboard: Patch: <https://github.com/trezor/trezor-firmware/commit/8eb6ce08995514c67d175b7197feeadeccc48ff0>  
+:mega: Explanation from vendor: <https://blog.trezor.io/details-of-the-multisig-change-address-issue-and-its-mitigation-6370ad73ed2a>  
+:dart: Explanation from reporter: <https://medium.com/shiftcrypto/a-remote-theft-attack-on-trezor-model-t-44127cd7fb5a>  
 
 :office: Vendor: Ledger  
 :scroll: Title: Monero private key retrieval.  
 :nerd_face: Detail: The Monero App for Ledger Nano was found to be vulnerable to a private key retrieval through the use of a malicious Monero Client (desktop application). Some computational elements are encrypted by the Nano S with a key only known to the Monero application, and sent to the desktop client for later use, due to space limitations on the Nano. During the final step of the signature (MLSAG sign), the client sends back some sensitive encrypted elements which the app uses to compute a Schnorr signature. A malicious client can misuse this by replaying earlier elements of this computation, and induce a variant of a nonce-reuse attack (see for example the PS3 Fail). This replay of commands is possible because the key derived by the app to encrypt elements is static, and there is no message authentication.  
 :poop: Bug: Bad MLSAG signature implementation   
-:clipboard: Patch: https://github.com/LedgerHQ/ledger-app-monero/commit/5d0658ad6369f3d0ff2d10ee9effa410eb185b98  
-:mega: Explanation from vendor: https://donjon.ledger.com/lsb/007/  
+:clipboard: Patch: <https://github.com/LedgerHQ/ledger-app-monero/commit/5d0658ad6369f3d0ff2d10ee9effa410eb185b98>  
+:mega: Explanation from vendor: <https://donjon.ledger.com/lsb/007/>  
 
 :office: Vendor: Coldcard    
 :scroll: Title: Troublesome Change Outputs   
 :nerd_face: Detail: It is possible to make a valid PSBT file that sends the change left from a transaction to a unknown location. If an attacker had your XPUB, and could change your PSBT file before you sign, they could modify the file so that the “change” (ie. the balance of Bitcoins you are sending back to yourself) goes to an effectively unknown address. If the attacker is profit motivated, they can ransom the knowledge of those change UTXO back to you.   
 :poop: Bug: BIP32 address derivation ransom attack  
 :sunglasses: Reporter: TheCharlatan   
-:mega: Explanation from vendor: https://blog.coinkite.com/troublesome-change/   
-:dart: Explanation from reporter: https://thecharlatan.github.io/Ransom-Coldcard/  
+:mega: Explanation from vendor: <https://blog.coinkite.com/troublesome-change/>   
+:dart: Explanation from reporter: <https://thecharlatan.github.io/Ransom-Coldcard/>  
 
 :office: Vendor: Coldcard    
 :scroll: Title: Ransom attack on Coldcard's receive address verification  
 :nerd_face: Detail: By inserting newlines in the derivation path string sent to the Coldcard, the displayed characters could be split. This could trick users into verifying an address for a BIP32 derivation path that is not easily accessible.  
 :sunglasses: Reporter: TheCharlatan  
 :poop: Bug: Bad input validation from host   
-:dart: Explanation from reporter: https://thecharlatan.github.io/Ransom-Coldcard/  
+:dart: Explanation from reporter: <https://thecharlatan.github.io/Ransom-Coldcard/>  
 
 :office: Vendor: Shift Cryptosecurity  
 :iphone: Product: BitBox01   
@@ -410,7 +415,7 @@ claims
 :nerd_face: Detail: ?  
 :poop: Bug: Bad cryptography  
 :sunglasses: Reporter: Saleem Rashid  
-:mega: Explanation from vendor: https://medium.com/shiftcrypto/bitboxapp-4-14-0-5e72575b0819  
+:mega: Explanation from vendor: <https://medium.com/shiftcrypto/bitboxapp-4-14-0-5e72575b0819>  
 
 ### December
 
@@ -420,7 +425,7 @@ claims
 :nerd_face: Detail: Same attack as executed by wallet.fail team on the Trezor, but now reproduced on Keepkey.  
 :poop: Bug: STM32F205 hardware weakness  
 :sunglasses: Reporter: Kraken  
-:darf: Explanation from reporter: https://blog.kraken.com/post/3248/flaw-found-in-keepkey-crypto-hardware-wallet-part-2/
+:darf: Explanation from reporter: <https://blog.kraken.com/post/3248/flaw-found-in-keepkey-crypto-hardware-wallet-part-2/>  
 
 :office: Vendor: Shapeshift  
 :iphone: Product: Keepkey  
@@ -428,7 +433,7 @@ claims
 :nerd_face: Detail: Insufficient checks in the USB packet handling of the ShapeShift KeepKey hardware wallet before firmware 6.2.2 allow out-of-bounds writes on the stack via crafted messages. The vulnerability could allow code execution or other forms of impact. It can be triggered by unauthenticated attackers and the interface is reachable via WebUSB.  
 :poop: Bug: USB buffer overflow  
 :sunglasses: Reporter: Christian Reiter  
-:mega: Explanation from vendor: https://medium.com/shapeshift-stories/shapeshift-security-update-8ec89bb1b4e3  
+:mega: Explanation from vendor: <https://medium.com/shapeshift-stories/shapeshift-security-update-8ec89bb1b4e3>  
 
 :office: Vendor: Shapeshift  
 :iphone: Product: Keepkey  
@@ -436,17 +441,17 @@ claims
 :nerd_face: Detail: Insufficient checks in the finite state machine of the ShapeShift KeepKey hardware wallet before firmware 6.2.2 allow a partial reset of cryptographic secrets to known values via crafted messages. Notably, this breaks the security of U2F for new server registrations and invalidates existing registrations. This vulnerability can be exploited by unauthenticated attackers and the interface is reachable via WebUSB.   
 :poop: Bug: Secrets not wiped fully, unclear at this time how this was achieved.  
 :sunglasses: Reporter: Christian Reiter   
-:mega: Explanation from vendor: https://medium.com/shapeshift-stories/shapeshift-security-update-8ec89bb1b4e3  
+:mega: Explanation from vendor: <https://medium.com/shapeshift-stories/shapeshift-security-update-8ec89bb1b4e3>  
 
 ## Footnotes
 ### Relevant blogs:
-Christian Reiter: https://blog.inhq.net/  
-Saleem Rashid: https://saleemrashid.com/  
-wallet.fail: https://wallet.fail/  
+Christian Reiter: <https://blog.inhq.net/>  
+Saleem Rashid: <https://saleemrashid.com/>  
+wallet.fail: <https://wallet.fail/>  
 
 ### :office: Vendor Security Programs:
-Trezor: https://trezor.io/security/  
-Ledger: https://donjon.ledger.com/bounty/  
-Shift Cryptosecurity: https://shiftcrypto.ch/policies/bug-bounty-policy/  
-Shapeshift: https://medium.com/shapeshift-stories/shapeshift-security-update-8ec89bb1b4e3
+Trezor: <https://trezor.io/security/>   
+Ledger: <https://donjon.ledger.com/bounty/>  
+Shift Cryptosecurity: <https://shiftcrypto.ch/policies/bug-bounty-policy/>  
+Shapeshift: <https://shapeshift.com/responsible-disclosure-program>
 
