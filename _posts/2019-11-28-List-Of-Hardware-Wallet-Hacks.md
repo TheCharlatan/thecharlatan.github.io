@@ -425,7 +425,7 @@ claims
 :nerd_face: Detail: Same attack as executed by wallet.fail team on the Trezor, but now reproduced on Keepkey.  
 :poop: Bug: STM32F205 hardware weakness  
 :sunglasses: Reporter: Kraken  
-:darf: Explanation from reporter: <https://blog.kraken.com/post/3248/flaw-found-in-keepkey-crypto-hardware-wallet-part-2/>  
+:dart: Explanation from reporter: <https://blog.kraken.com/post/3248/flaw-found-in-keepkey-crypto-hardware-wallet-part-2/>  
 
 :office: Vendor: Shapeshift  
 :iphone: Product: Keepkey  
@@ -442,6 +442,16 @@ claims
 :poop: Bug: Secrets not wiped fully, unclear at this time how this was achieved.  
 :sunglasses: Reporter: Christian Reiter   
 :mega: Explanation from vendor: <https://medium.com/shapeshift-stories/shapeshift-security-update-8ec89bb1b4e3>  
+
+:office: Vendor: Shift Cryptosecurity    
+:iphone: Product: BitBox02   
+:scroll: Title: Bypass of monotonic counter in MCU    
+:nerd_face: Detail: The monotonic counter limiting the number of attempts to enter the correct password could be bypassed. The monotonic counter of the Secure Chip was still active though, thus limiting the number of available attempts to 730'500 attempts. Assuming a special made device for brute-forcing needs about 10 seconds to guess a password, reaching the upper limit would take approximately 85 days (non-stop). The probability of an attacker guessing, for example, a random 5 character password using lowercase, uppercase and digits is 0.08%, 6 characters is 0.012%, and 7 characters is 0.00002%. The vulnerability was patched with a series of robustness improvements to the firmware and by using the MCU's memory protection unit (MPU).    
+:poop: Bug: Weakness in firmware hardening   
+:sunglasses: Reporter: Lazy Ninja    
+:mega: Explanation from vendor: <https://medium.com/shiftcrypto/bitboxapp-4-16-0-with-bitbox02-firmware-5-0-0-release-7073ade23988>
+
+
 
 ## Footnotes
 ### Relevant blogs:
