@@ -417,6 +417,14 @@ claims
 :sunglasses: Reporter: Saleem Rashid  
 :mega: Explanation from vendor: <https://medium.com/shiftcrypto/bitboxapp-4-14-0-5e72575b0819>  
 
+:office: Vendor: Shift Cryptosecurity  
+:iphone: Product: BitBox01   
+:scroll: Title: Base64 Parser Buffer Overflow   
+:nerd_face: Detail: The BitBox01 uses the NibbleAndAHalf library for base64 encoding. Among a bunch of potential issues, it contains a critical buffer overflow bug that would allow writing to adjacent heap memory. The NibbleAndAHalf library is unmainted and should not be used by embedded projects. Since this bug could not be shown to critically change the program flow of the firmware, it received a low severity rating by the vendor (but was patched with a small change).   
+:poop: Bug: Buffer Overflow, Bad choice of dependency   
+:sunglasses: Reporter: Christian Reitter   
+:dart: Explanation from reporter: <https://blog.inhq.net/posts/base64-parser-issues/>   
+
 ### December
 
 :office: Vendor: Shapeshift  
