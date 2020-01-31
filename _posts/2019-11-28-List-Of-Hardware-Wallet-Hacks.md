@@ -17,7 +17,7 @@ Let me know here: <https://github.com/TheCharlatan/thecharlatan.github.io>
 :office: Vendor: Trezor 
 
 :scroll: Title: Malicious ScriptSig in transaction  
-Description: A specially crafted transaction could extract the private key  
+:nerd_face: Detail: A specially crafted transaction could extract the private key  
 :eyes: Type: Transaction validation attack with authentication  
 :poop: Bug: Buffer Overflow  
 :sunglasses: Reporter: Nicolas Bacca (Ledger)  
@@ -28,7 +28,7 @@ Description: A specially crafted transaction could extract the private key
 
 :office: Vendor: Trezor  
 :scroll: Title: SpendMultisig malicious change in transaction  
-Description: A specially crafted transaction could contain a change output of an attacker, which wasn't confirmed by the user  
+:nerd_face: Detail: A specially crafted transaction could contain a change output of an attacker, which wasn't confirmed by the user  
 :eyes: Type: Transaction validation attack with authentication   
 :poop: Bug: Insufficient transaction checks  
 :sunglasses: Reporter: Nicolas Bacca (Ledger)  
@@ -91,7 +91,7 @@ Description: A specially crafted transaction could contain a change output of an
 
 :office: Vendor: Ledger  
 :scroll: Title: MCU signature verification bypass   
-:nerd_face: Detail: The signature verification of the MCU can be bypassed, allowing an attacker to perform supply chain attacks. It requires a physical access to the device before the generation of the seed.  
+:nerd_face: Detail: The signature verification of the MCU can be bypassed, allowing an attacker to perform supply chain attacks. It requires physical access to the device before the generation of the seed.  
 :eyes: Type:  Supply chain attack  
 :poop: Bug: Overall authentication architecture in MCU, fixed with a bunch of small patches  
 :sunglasses: Reporter: Saleem Rashid  
@@ -102,7 +102,7 @@ Description: A specially crafted transaction could contain a change output of an
 :scroll: Title: Isolation vulnerability  
 :nerd_face: Detail: A malicious app can break the isolation between apps and access sensitive data managed by specific apps such as GPG, U2F or Neo.   
 :poop: Bug: Null pointer dereferencing, pointer length not properly checked, Flash zone not wiped properly after device reset.  
-:eyes: Type: Privilege escelation  
+:eyes: Type: Privilege escalation  
 :sunglasses: Reporter: Sergei Volokitin  
 :mega: Explanation from vendor: <https://donjon.ledger.com/lsb/003/>  
 :dart: Explanation from reporter: <https://i.blackhat.com/us-18/Wed-August-8/us-18-Volokitin-Software-Attacks-On-Hardware-Wallets.pdf>  
@@ -111,9 +111,9 @@ Description: A specially crafted transaction could contain a change output of an
 
 :office: Vendor: Trezor  
 :scroll: Title: Race condition in recovery  
-:nerd_face: Detail: Specially crafted USB communication could trigger a stack overflow in recovery which could lead to code execution.  
+:nerd_face: Detail: Specially crafted USB communication packets could trigger a stack overflow in recovery which could lead to code execution.  
 :eyes: Type: Stack overflow  
-:poop: Bug: USB buffer overflow, during dry-run recovery which recursivly handles packets, a stack overflow can be triggered  
+:poop: Bug: USB buffer overflow, during dry-run recovery which recursively handles packets, a stack overflow can be triggered  
 :sunglasses: Reporter: Christian Reitter  
 :clipboard: Patch: <https://github.com/trezor/trezor-firmware/commit/c9113fd3f5fcd78e9e560dbac75ed5aae359eb2d>  
 :mega: Explanation from vendor: <https://blog.trezor.io/details-about-the-security-updates-in-trezor-one-firmware-1-6-2-a3b25b668e98>   
@@ -121,7 +121,7 @@ Description: A specially crafted transaction could contain a change output of an
 
 :office: Vendor: Trezor  
 :scroll: Title: Message processing error  
-:nerd_face: Detail: Specially crafted USB packet could trigger a buffer overflow which could lead to code execution on older firmwares.  
+:nerd_face: Detail: Specially crafted USB packet could trigger a buffer overflow which could lead to code execution on older firmware.  
 :eyes: Type: Buffer overflow  
 :poop: Bug: USB buffer overflow if the USB message buffer is flooded with specially crafted incoming messages  
 :sunglasses: Reporter: Christian Reitter  
@@ -133,7 +133,7 @@ Description: A specially crafted transaction could contain a change output of an
 :office: Vendor: Shift Cryptosecurity  
 :iphone: Product: BitBox01   
 :scroll: Title: Simulating the secure chip    
-:nerd_face: Detail: After physically breaking apart the BitBox casing, attaching invasive probes, and manipulating the data sent to the BitBox's microcontroller, a BitBox could be reset but without erasing the wallet secrets. A patch was provided on 31 July 2018. If the bottom casing of your BitBox has not been removed or tampered with, you are not at risk.     
+:nerd_face: Detail: After physically breaking apart the BitBox casing, attaching invasive probes, and manipulating the data sent to the BitBox's micro controller, a BitBox could be reset but without erasing the wallet secrets. A patch was provided on 31 July 2018.   
 :eyes: Type: Information leak     
 :poop: Bug: Secrets not cleared after wallet reset  
 :sunglasses: Reporter: Saleem Rashid   
@@ -166,7 +166,7 @@ Description: A specially crafted transaction could contain a change output of an
 
 :office: Vendor: Trezor  
 :scroll: Title: Buffer overflow in bech32_decode  
-:nerd_face: Detail: The C reference implementation for bech32 has an unsigned integer overflow that can lead to a buffer overflow. The bug was fixed by preventing the out-of-bounds accesses in the code.  
+:nerd_face: Detail: The C reference implementation for bech32 has an unsigned integer overflow that can lead to a buffer overflow. The bug was fixed by preventing out-of-bounds accesses in the code.  
 :eyes: Type: Buffer overflow  
 :poop: Bug: No sufficient out of bounds check  
 :sunglasses: Reporter: Christian Reitter  
@@ -207,7 +207,7 @@ Description: A specially crafted transaction could contain a change output of an
 :office: Vendor: Ledger   
 :scroll: Title: Bitcoin change address injection  
 :nerd_face: Detail: A vulnerability was found in the Bitcoin app allowing an attacker to add an unverified output change address into a legit transaction. It can lead to sending funds to an arbitrary address without requiring an additional confirmation on the device. The original transaction still has to be confirmed though.  
-:poop: Bug: Bad Bitcoin transcation information validation  
+:poop: Bug: Bad Bitcoin transaction information validation  
 :sunglasses: Reporter: Sergey Lappo  
 :mega: Explanation from vendor: <https://donjon.ledger.com/lsb/004/>  
 :dart: Explanation from reporter: <https://sergeylappo.github.io/ledger-hack/>  
@@ -284,8 +284,7 @@ Description: A specially crafted transaction could contain a change output of an
 :office: Vendor: Shift Cryptosecurity  
 :iphone: Product: BitBox01   
 :scroll: Title: Information leak via U2F  
-:nerd_face: Detail: The C/C++ reference implementation for U2F by Yubico contains broken definition of a struct which can leak bytes from RAM via USB. The bug was fixed by updating the structure definition to a new correct one.  
-claims  
+:nerd_face: Detail: The C/C++ reference implementation for U2F by Yubico contains a broken definition of a struct which can leak bytes from RAM via USB. The bug was fixed by updating the struct definition to a new correct one.  
 :poop: Bug: Bad struct memory layout  
 :sunglasses: Reporter: Christian Reitter  
 :mega: Explanation from vendor: <https://medium.com/shiftcrypto/important-security-news-about-version-4-4-0-upgrade-2449b745be9>  
@@ -370,7 +369,7 @@ claims
 :scroll: Title: OLED screen side-channel vulnerability.    
 :nerd_face: Detail: Same as with Trezor, Ledger, Coldcard and BitBox02   
 :eyes: Type: Information leak    
-:poop: Bug: OLED screens consume power based on number of pixels that are on. Keepkey alleges that since they show multiple seedwords at once, the vulnerability does not apply to them.  
+:poop: Bug: OLED screens consume power based on number of pixels that are on. Keepkey alleges that since they show multiple seed words at once, the vulnerability does not apply to them.  
 :sunglasses: Reporter: Christian Reitter    
 :mega: Explanation from vendor: <https://medium.com/shapeshift-stories/shapeshift-security-update-5b0dd45c93db>  
 :dart: Explanation from reporter: <https://blog.inhq.net/posts/oled-side-channel-status-summary/>    
