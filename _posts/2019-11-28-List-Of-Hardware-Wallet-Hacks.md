@@ -15,7 +15,6 @@ Let me know here: <https://github.com/TheCharlatan/thecharlatan.github.io>
 ### Juli:
 
 :office: Vendor: Trezor 
-
 :scroll: Title: Malicious ScriptSig in transaction  
 :nerd_face: Detail: A specially crafted transaction could extract the private key  
 :eyes: Type: Transaction validation attack with authentication  
