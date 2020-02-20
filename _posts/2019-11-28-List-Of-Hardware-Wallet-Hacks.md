@@ -469,5 +469,6 @@ wallet.fail: <https://wallet.fail/><br>
 Trezor: <https://trezor.io/security/><br> 
 Ledger: <https://donjon.ledger.com/bounty/><br>
 Shift Cryptosecurity: <https://shiftcrypto.ch/policies/bug-bounty-policy/><br>
-Shapeshift: <https://shapeshift.com/responsible-disclosure-program>
+Shapeshift: <https://shapeshift.com/responsible-disclosure-program><br>
+Coldcard: <https://coinkite.com/responsible-disclosure>
 
