@@ -440,6 +440,7 @@ Let me know here: <https://github.com/TheCharlatan/thecharlatan.github.io><br>
 :poop: Bug: USB buffer overflow<br>
 :sunglasses: Reporter: Christian Reitter<br>
 :mega: Explanation from vendor: <https://medium.com/shapeshift-stories/shapeshift-security-update-8ec89bb1b4e3><br>
+:dart: Explanation from reporter: <https://blog.inhq.net/posts/keepkey-CVE-2019-18671/><br>
 
 :office: Vendor: Shapeshift<br>
 :iphone: Product: Keepkey<br>
@@ -448,6 +449,7 @@ Let me know here: <https://github.com/TheCharlatan/thecharlatan.github.io><br>
 :poop: Bug: Secrets not wiped fully, unclear at this time how this was achieved.<br>
 :sunglasses: Reporter: Christian Reitter<br> 
 :mega: Explanation from vendor: <https://medium.com/shapeshift-stories/shapeshift-security-update-8ec89bb1b4e3><br>
+:dart: Explanation from reporter: <https://blog.inhq.net/posts/keepkey-CVE-2019-18672/><br>
 
 :office: Vendor: Shift Cryptosecurity<br>
 :iphone: Product: BitBox02<br> 
