@@ -459,7 +459,15 @@ Let me know here: <https://github.com/TheCharlatan/thecharlatan.github.io><br>
 :sunglasses: Reporter: Lazy Ninja<br>
 :mega: Explanation from vendor: <https://medium.com/shiftcrypto/bitboxapp-4-16-0-with-bitbox02-firmware-5-0-0-release-7073ade23988>
 
-
+:office: Vendor: Coinkite<br>
+:iphone: Product: Coldcard<br>
+:scroll: Title: Multisig Change Script Vulnerability<br>
+:nerd_face: Detail: The multisig change script could contain injected script opcodes. By adding a simple `OP_DROP` after the original multisig keys, the attacker could make the victim spend to an unintend address: `1 <pubA> <pubB> 2 CHECKMULTISIG DROP 1 <pubM0> <pubM1> 2 CHECKMULTISIG`. This was patched by ensuring that the redeem script remains the same.<br>
+:poop: Bug: Bad transaction validation on device<br>
+:sunglasses: Reporter: Dmitry Petukhov<br>
+:clipboard: Patch: <https://github.com/Coldcard/firmware/commit/55f7cfd8ff6223a8f2a119519de2ee3c969bc06f/><br>
+:mega: Explanation from vendor: <https://blog.coinkite.com/version-3.0.6-released/><br> 
+:dart: Explanation from reporter: <https://gist.github.com/dgpv/c580080cd6984fb0121b61f1e1b5db51/><br>
 
 ## Footnotes
 ### Relevant blogs:
@@ -472,5 +480,5 @@ Trezor: <https://trezor.io/security/><br>
 Ledger: <https://donjon.ledger.com/bounty/><br>
 Shift Cryptosecurity: <https://shiftcrypto.ch/policies/bug-bounty-policy/><br>
 Shapeshift: <https://shapeshift.com/responsible-disclosure-program><br>
-Coldcard: <https://coinkite.com/responsible-disclosure>
+Coinkite: <https://coinkite.com/responsible-disclosure><br>
 
