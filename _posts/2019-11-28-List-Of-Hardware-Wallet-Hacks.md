@@ -469,6 +469,52 @@ Let me know here: <https://github.com/TheCharlatan/thecharlatan.github.io><br>
 :mega: Explanation from vendor: <https://blog.coinkite.com/version-3.0.6-released/><br> 
 :dart: Explanation from reporter: <https://gist.github.com/dgpv/c580080cd6984fb0121b61f1e1b5db51/><br>
 
+# 2020
+### March
+
+:office: Vendor: Trezor<br>
+:iphone: Product: Model T<br>
+:scroll: Title: OP_RETURN treated as change output<br>
+:nerd_face: Detail: By filling the address_n field with a change address in a Trezor protobuf message, an OP_RETURN transaction would be signed without user verification. This could potentially impact Omni Layer transactions that make use of the OP_RETURN data.<br>
+:poop: Bug: Bad transaction validation on device<br>
+:sunglasses: Reporter: Saleem Rashid<br>
+:clipboard: Patch: <https://github.com/trezor/trezor-firmware/commit/0903159d9b2df447434b9a5afdbca3eae8b4e52b><br>
+:mega: Explanation from vendor:
+<https://blog.trezor.io/details-of-firmware-updates-for-trezor-one-version-1-9-0-and-trezor-model-t-version-2-3-0-46deb141fc09><br>
+
+:office: Vendor: Trezor<br>
+:iphone: Product: Model T<br>
+:scroll: Title: Malicious Change in Mixed Transactions<br>
+:nerd_face: Detail: In Trezor's two stage transactiong validation and signing process claims about the addresses in the first stage were not sufficiently verified in the second stage. This could be used to insert a malicious 1of2 multisig change output into the transaction. This is very similar to an attack as discovered by Marko Bencun in October 2019.<br>
+:poop: Bug: Bad transaction validation on device<br>
+:sunglasses: Reporter: Saleem Rashid<br>
+:mega: Explanation from vendor:
+<https://blog.trezor.io/details-of-firmware-updates-for-trezor-one-version-1-9-0-and-trezor-model-t-version-2-3-0-46deb141fc09><br>
+
+:office: Vendor: Trezor<br>
+:iphone: Product: Model T<br>
+:scroll: Title: Insufficient field size check in Protobuf<br>
+:nerd_face: Detail: When signing a bitcoin transaction, the field length of the
+previous transaction output hash should always be 32 bytes long. The Trezor
+Model T did not check this field correctly. Hidden in this long prevhash could
+be an unrelated output that the Trezor would then sign as part of the
+transaction. The attacker can then spend coins on this signed output.<br>
+:poop: Bug: Bad input validation and length restriction<br>
+:sunglasses: Reporter: Saleem Rashid<br>
+:clipboard: Patch: <https://github.com/trezor/trezor-firmware/commit/da89a17ce5c45972e5523dceb67ffbebf62d05c2><br>
+:mega: Explanation from vendor:
+<https://blog.trezor.io/details-of-firmware-updates-for-trezor-one-version-1-9-0-and-trezor-model-t-version-2-3-0-46deb141fc09><br>
+
+:office: Vendor: Trezor<br>
+:iphone: Product: Model T<br>
+:scroll: Title: Inconsistent sanitization of transaction inputs<br>
+:nerd_face: Detail: Yet another case of injecting a 1of2 multisig output as a change output. The attacker creates a single sig input and multisig output transaction. If the multisig field is sent in the protobuf message together with the single sig input, the device incorrectly marked the malicious multisig output as a change output.<br>
+:poop: Bug: Bad input and transaction validation on device<br>
+:sunglasses: Reporter: Saleem Rashid<br>
+:mega: Explanation from vendor:
+<https://blog.trezor.io/details-of-firmware-updates-for-trezor-one-version-1-9-0-and-trezor-model-t-version-2-3-0-46deb141fc09><br>
+
+
 ## Footnotes
 ### Relevant blogs:
 Christian Reitter: <https://blog.inhq.net/><br>
