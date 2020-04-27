@@ -470,6 +470,18 @@ Let me know here: <https://github.com/TheCharlatan/thecharlatan.github.io><br>
 :dart: Explanation from reporter: <https://gist.github.com/dgpv/c580080cd6984fb0121b61f1e1b5db51/><br>
 
 # 2020
+
+### January
+
+:office: Vendor: Ledger<br>
+:iphone: Product: Ledger Nano<br>
+:scroll: Title: Monero Private Key Retrieval<br>
+:nerd_face: Detail: Re-use of a parameter in the mlsag_sign function of the ledger monero app leads to possible spend key extraction by the host. Optimally, this parameter should be random and not re-used. In practice this was solved by keying the different HMACs used with specific values per operation. However there were multiple problems in the app that made the exploit easier. The writeup by ph4r05 gives a great overview of them.<br>
+:poop: Bug: Bad Crypto Implementation<br>
+:sunglasses: Reporter: ph4r05<br>
+:mega: Explanation from vendor: <https://donjon.ledger.com/lsb/008/><br>
+:dart: Explanation from reporter: <https://deadcode.me/blog/2020/04/25/Ledger-Monero-app-spend-key-extraction.html><br>
+
 ### March
 
 :office: Vendor: Trezor<br>
@@ -494,11 +506,7 @@ Let me know here: <https://github.com/TheCharlatan/thecharlatan.github.io><br>
 :office: Vendor: Trezor<br>
 :iphone: Product: Model T<br>
 :scroll: Title: Insufficient field size check in Protobuf<br>
-:nerd_face: Detail: When signing a bitcoin transaction, the field length of the
-previous transaction output hash should always be 32 bytes long. The Trezor
-Model T did not check this field correctly. Hidden in this long prevhash could
-be an unrelated output that the Trezor would then sign as part of the
-transaction. The attacker can then spend coins on this signed output.<br>
+:nerd_face: Detail: When signing a bitcoin transaction, the field length of the previous transaction output hash should always be 32 bytes long. The Trezor Model T did not check this field correctly. Hidden in this long prevhash could be an unrelated output that the Trezor would then sign as part of the transaction. The attacker can then spend coins on this signed output.<br>
 :poop: Bug: Bad input validation and length restriction<br>
 :sunglasses: Reporter: Saleem Rashid<br>
 :clipboard: Patch: <https://github.com/trezor/trezor-firmware/commit/da89a17ce5c45972e5523dceb67ffbebf62d05c2><br>
@@ -520,6 +528,7 @@ transaction. The attacker can then spend coins on this signed output.<br>
 Christian Reitter: <https://blog.inhq.net/><br>
 Saleem Rashid: <https://saleemrashid.com/><br>
 wallet.fail: <https://wallet.fail/><br>
+0xDEADC0DE / ph4r05: <https://deadcode.me/><br>
 
 ### :office: Vendor Security Programs:
 Trezor: <https://trezor.io/security/><br> 
