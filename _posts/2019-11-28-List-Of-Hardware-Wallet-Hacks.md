@@ -428,7 +428,7 @@ Let me know here: <https://github.com/TheCharlatan/thecharlatan.github.io><br>
 :office: Vendor: Shift Cryptosecurity<br>
 :iphone: Product: BitBox01<br> 
 :scroll: Title: Base64 Parser Buffer Overflow<br> 
-:nerd_face: Detail: The BitBox01 uses the NibbleAndAHalf library for base64 encoding. Among a bunch of potential issues, it contains a critical buffer overflow bug that would allow writing to adjacent heap memory. The NibbleAndAHalf library is not maintained for security bugs and should not be used by embedded projects where security is important. Since this bug could not be shown to critically change the program flow of the firmware, it received a low severity rating by the vendor (but was patched with a small change).<br>
+:nerd_face: Detail: The BitBox01 uses the NibbleAndAHalf library for base64 encoding. Among a bunch of potential issues, it contains a critical buffer overflow bug that would allow writing to adjacent heap memory. The NibbleAndAHalf library is not maintained for security bugs and should not be used by embedded projects where security is important. Since this bug could not be shown to critically change the program flow of the firmware, it received a low severity rating by the vendor (but was patched with a small change with the NibbleAndAHalf remaining in place).<br>
 :poop: Bug: Buffer Overflow, Bad choice of dependency<br>
 :sunglasses: Reporter: Christian Reitter<br> 
 :dart: Explanation from reporter: <https://blog.inhq.net/posts/base64-parser-issues/><br> 
