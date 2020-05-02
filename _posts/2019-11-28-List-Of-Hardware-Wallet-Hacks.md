@@ -339,6 +339,16 @@ Let me know here: <https://github.com/TheCharlatan/thecharlatan.github.io><br>
 :mega: Explanation from vendor: <https://blog.coinkite.com/noise-troll/><br> 
 :dart: Explanation from reporter: <https://blog.inhq.net/posts/oled-side-channel-status-summary/><br>
 
+### May
+
+:office: Vendor: BC Vault<br>
+:iphone: Product: BC Vault One<br>
+:scroll: Title: BC Vault One button side channel<br>
+:nerd_face: Detail: The attack uses H-field probing and a USB resistor shunt to detect button presses, like those made during initial PIN entry. While the report was received by the vendor, no mitigation was attempted and communication was aborted with the reporter.<br>
+:poop: Bug: H-field Side Channel<br>
+:sunglasses: Reporter: Christian Reitter<br>
+:dart: Explanation from reporter: <https://blog.inhq.net/posts/bc-vault-one-button-side-channel/><br>
+
 ### June
 
 :office: Vendor: Shift Cryptosecurity<br>
