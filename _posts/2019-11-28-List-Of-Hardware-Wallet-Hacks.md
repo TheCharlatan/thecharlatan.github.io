@@ -534,7 +534,7 @@ Let me know here: <https://github.com/TheCharlatan/thecharlatan.github.io><br>
 
 
 ## Footnotes
-### Relevant blogs:
+### :sunglasses: Relevant blogs:
 Christian Reitter: <https://blog.inhq.net/><br>
 Saleem Rashid: <https://saleemrashid.com/><br>
 wallet.fail: <https://wallet.fail/><br>
@@ -546,4 +546,8 @@ Ledger: <https://donjon.ledger.com/bounty/><br>
 Shift Cryptosecurity: <https://shiftcrypto.ch/policies/bug-bounty-policy/><br>
 Shapeshift: <https://shapeshift.com/responsible-disclosure-program><br>
 Coinkite: <https://coinkite.com/responsible-disclosure><br>
+
+### :mega: Corporate Security Blogs:
+Kraken Security: <https://blog.kraken.com/post/category/kraken-news/security/><br>
+Ledger Donjon: <https://donjon.ledger.com/><br>
 
