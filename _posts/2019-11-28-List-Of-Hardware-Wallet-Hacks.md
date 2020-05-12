@@ -494,6 +494,14 @@ Let me know here: <https://github.com/TheCharlatan/thecharlatan.github.io><br>
 
 ### March
 
+:office: Vendor: Coinkite<br>
+:iphone: Product: COLDCARD<br>
+:scroll: Title: Supply Chain Attack with attacker controlled Firmware<br>
+:nerd_face: Detail: The COLDCARD does a factory reset when an existing PIN is changed to an empty PIN , contrary to COLDCARD’s claims that a factory reset is impossible. This can be used to distribute tampered devices without much effort. COLDCARD has not patched the issue to date.<br>
+:poop: Bug: Bad PIN check / zero condition<br>
+:sunglasses: Reporter: TheCharlatan<br>
+:dart: Explanation from reporter: <https://thecharlatan.github.io/COLDCARD-Supply-Chain/><br>
+
 :office: Vendor: Trezor<br>
 :iphone: Product: Model T<br>
 :scroll: Title: OP_RETURN treated as change output<br>
