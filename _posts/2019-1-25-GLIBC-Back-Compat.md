@@ -3,14 +3,14 @@ layout: post
 title: Make binaries portable across linux distros
 ---
 
-When compiling a static binary on one linux distribution, it is not guaranteed to be compatible with another distribution out of the box. This is even true, when compiling statically. For example when I cross-compile monerod for aarch64 on an x86_64 machine running ubuntu 18.04, I get the following error when running the binary on my debian 9 aarch64 system:
+When compiling a static binary on one linux distribution, it is not guaranteed to be compatible with another distribution out of the box. This is even true when compiling statically. For example when I cross-compile monerod for aarch64 on an x86_64 machine running ubuntu 18.04, I get the following error upon running the binary on my debian 9 aarch64 system:
 
     ./monerod: /lib/aarch64-linux-gnu/libc.so.6: version `GLIBC_2.27' not found (required by ./monerod)
     ./monerod: /lib/aarch64-linux-gnu/libc.so.6: version `GLIBC_2.25' not found (required by ./monerod)
 
-The system c-library glibc is evidently not statically linked, even though the binary is compiled with `-static`. `gcc` does not link glibc statically, and trying to override this is heavily discouraged. When running a binary on linux, it either looks for the host system's libc, or if specified in the symbol table, a locally linked version shipped with the main executable. Newer versions of glibc are not backwards compatible to older version. Compiling the binary on our ubuntu system we used a different version of the glibc library compared to the glibc version we have installed on our debian 9 system. The newer library on our ubuntu machine contains improvements and security fixes that the older library on debian does not know about yet. This leaves us with undefined, or differently defined symbols in our static binary. Luckily glibc versions its symbols with semver and allows selecting older versions of system functions. 
+The system c-library glibc is evidently not statically linked, even though the binary is compiled with `-static`. `gcc` does not link glibc statically, and trying to override this is heavily discouraged. When running a binary on linux it either looks for the host system's libc, or if specified in the symbol table, a locally linked version shipped with the main executable. Newer versions of glibc are not backwards compatible to older version. Compiling the binary on our ubuntu system we used a different version of the glibc library compared to the glibc version we have installed on our debian 9 system. The newer library on our ubuntu machine contains improvements and security fixes that the older library on debian does not know about yet. This leaves us with undefined, or differently defined symbols in our static binary. Luckily glibc versions its symbols with semver and allows selecting older versions of system functions. 
 
-There are two different ways to ship around glibc versioning and still be able to run a static binary compiled on one distribution on another. We now chieck which two symbols create the error message above. For this first run `objdump -T monerod | grep 2\\.27`:
+There are two different ways to ship around glibc versioning and still be able to run a static binary compiled on one distribution on another. We now check which two symbols create the error message above. For this first run `objdump -T monerod | grep 2\\.27`:
 
     0000000000000000      DF *UND*  0000000000000000  GLIBC_2.27  glob
 
@@ -50,7 +50,7 @@ Lets now create a new `*.c/*.cpp` file that we compile and link into our final e
     
 Lastly we need to make sure that this newly defined glob is wrapped  in the old function by adding `-Wl,--wrap=glob` to the linker flags. 
 
-Now lets run `objdump -T monerod | grep 2\\.27`:
+Now lets run `objdump -T monerod | grep 2\\.25`:
 
     0000000000000000      DF *UND*  0000000000000000  GLIBC_2.25  __explicit_bzero_chk
 
