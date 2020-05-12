@@ -156,8 +156,8 @@ signed-off binary, the malicious firmware could play nice and update it by
 putting it into a flash region that is not checked by the bootloader. The
 bootloader only checks regions as defined in the header of the firmware (which
 sits at the start of the firmware chunk in memory). Writing such a malicious
-firmware would be involved though (I screwed up on first attempt and now my
-it's a brick), especially because of the 1 MB flash limit set in place by the
+firmware would be involved though (I screwed up on first attempt and now it's a
+brick), especially because of the 1 MB flash limit set in place by the
 STM32L496RG mcu and the code execution protections on the chip. This means that
 as a band aid solution all users should update their firmware first before
 setting up the device. 
