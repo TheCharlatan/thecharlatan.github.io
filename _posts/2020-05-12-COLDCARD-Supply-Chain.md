@@ -65,9 +65,10 @@ say](https://github.com/Coldcard/firmware/blob/master/docs/pin-entry.md#limitati
 new code cannot be loaded until the PIN is set, and there is no way to clear
 main PIN.*
 
-In the following I will show that this is not true. There is indeed a simple
-way to clear the main PIN in the firmware, which in turn allows for a supply
-chain attack (or as they state interception from the factory).
+In the following I will show that both these claims are not true. There is
+indeed a simple way to clear the main PIN in the firmware, which in turn does a
+factory reset. This allows for a supply chain attack (or as they call it
+interception from the factory).
 
 ### The exploit
 
