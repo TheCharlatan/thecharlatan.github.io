@@ -1,6 +1,7 @@
 ---
 layout: post
 title: A practical supply chain attack on the COLDCARD
+image: /images/dev-warning.png
 ---
 
 *TLDR: The COLDCARD does a factory reset when an existing PIN is
