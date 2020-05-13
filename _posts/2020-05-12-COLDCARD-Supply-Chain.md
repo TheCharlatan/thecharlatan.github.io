@@ -58,6 +58,17 @@ that chip cannot be quickly reset. However, you can clear the wallet seeds and
 remove secondary PIN code individually. It's a lot of typing and all
 corresponding PIN codes must be already known to you.*
 
+They also go on [to
+say](https://github.com/Coldcard/firmware/blob/master/docs/pin-entry.md#limitation):
+
+*if new device is intercepted from our factory (ie. without a main pin set),
+new code cannot be loaded until the PIN is set, and there is no way to clear
+main PIN.*
+
+In the following I will show that this is not true. There is indeed a simple
+way to clear the main PIN in the firmware, which in turn allows for a supply
+chain attack (or as they state interception from the factory).
+
 ### The exploit
 
 I then checked in the COLDCARD [source
