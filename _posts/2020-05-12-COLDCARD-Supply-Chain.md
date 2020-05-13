@@ -27,8 +27,13 @@ feel safe doing that, then it's a choice you can make.*
 So what protects their users from malicious firmware updates in general?
 Firmware that is not signed by Coinkite will light up the red warning light the
 first time it is run. It also displays a "Danger" screen for 30 seconds to make
-sure users understand that something is wrong with the device. These scenarios
-are also covered in their [extensive documentation](<https://github.com/Coldcard/firmware/blob/master/docs/pin-entry.md#obvious-hack-attack>):
+sure users understand that something is wrong with the device:
+
+![Danger](/images/dev-warning.png
+"The danger screen")
+
+These scenarios are also covered in their [extensive
+documentation](<https://github.com/Coldcard/firmware/blob/master/docs/pin-entry.md#obvious-hack-attack>):
 
 *Obvious Hack-Attack*
 
