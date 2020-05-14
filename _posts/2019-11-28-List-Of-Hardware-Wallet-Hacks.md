@@ -428,7 +428,7 @@ Let me know here: <https://github.com/TheCharlatan/thecharlatan.github.io><br>
 :office: Vendor: Shift Cryptosecurity<br>
 :iphone: Product: BitBox01<br> 
 :scroll: Title: Base64 Parser Buffer Overflow<br> 
-:nerd_face: Detail: The BitBox01 uses the NibbleAndAHalf library for base64 encoding. Among a bunch of potential issues, it contains a critical buffer overflow bug that would allow writing to adjacent heap memory. The NibbleAndAHalf library is not maintained for security bugs and should not be used by embedded projects where security is important. Since this bug could not be shown to critically change the program flow of the firmware, it received a low severity rating by the vendor (but was patched with a small change with the NibbleAndAHalf remaining in place).<br>
+:nerd_face: Detail: The BitBox01 uses the NibbleAndAHalf library for base64 encoding. Among a bunch of potential issues, it contains a critical buffer overflow bug that would allow writing to adjacent heap memory. The NibbleAndAHalf library is not maintained for security bugs and should not be used by embedded projects where security is important. Since this bug could not be shown to critically change the program flow of the firmware, it received a low severity rating by the vendor (but was patched with the unmaintained NibbleAndAHalf library remaining in place).<br>
 :poop: Bug: Buffer Overflow, Bad choice of dependency<br>
 :sunglasses: Reporter: Christian Reitter<br> 
 :dart: Explanation from reporter: <https://blog.inhq.net/posts/base64-parser-issues/><br> 
@@ -467,7 +467,8 @@ Let me know here: <https://github.com/TheCharlatan/thecharlatan.github.io><br>
 :nerd_face: Detail: The monotonic counter limiting the number of attempts to enter the correct password could be bypassed. The monotonic counter of the Secure Chip was still active though, thus limiting the number of available attempts to 730'500 attempts. Assuming a special made device for brute-forcing needs about 10 seconds to guess a password, reaching the upper limit would take approximately 85 days (non-stop). The probability of an attacker guessing, for example, a random 5 character password using lowercase, uppercase and digits is 0.08%, 6 characters is 0.012%, and 7 characters is 0.00002%. The vulnerability was patched with a series of robustness improvements to the firmware and by using the MCU's memory protection unit (MPU).<br>
 :poop: Bug: Weakness in firmware hardening<br> 
 :sunglasses: Reporter: Lazy Ninja<br>
-:mega: Explanation from vendor: <https://medium.com/shiftcrypto/bitboxapp-4-16-0-with-bitbox02-firmware-5-0-0-release-7073ade23988>
+:mega: Explanation from vendor: <https://medium.com/shiftcrypto/bitboxapp-4-16-0-with-bitbox02-firmware-5-0-0-release-7073ade23988><br>
+:darf: Explanation from reporter: <https://www.cryptolazyninja.com/2019/12/bitbox02-weak-password-attack.html><br>
 
 :office: Vendor: Coinkite<br>
 :iphone: Product: Coldcard<br>
@@ -500,6 +501,7 @@ Let me know here: <https://github.com/TheCharlatan/thecharlatan.github.io><br>
 :nerd_face: Detail: The COLDCARD does a factory reset when an existing PIN is changed to an empty PIN , contrary to COLDCARD’s claims that a factory reset is impossible. This can be used to distribute tampered devices without much effort. COLDCARD has not patched the issue to date.<br>
 :poop: Bug: Bad PIN check / zero condition<br>
 :sunglasses: Reporter: TheCharlatan<br>
+:mega: Explanation from vendor: <https://blog.coinkite.com/supply-chain-trust-minimized/><br>
 :dart: Explanation from reporter: <https://thecharlatan.github.io/COLDCARD-Supply-Chain/><br>
 
 :office: Vendor: Trezor<br>
