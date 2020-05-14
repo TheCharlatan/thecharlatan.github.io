@@ -549,6 +549,7 @@ Christian Reitter: <https://blog.inhq.net/><br>
 Saleem Rashid: <https://saleemrashid.com/><br>
 wallet.fail: <https://wallet.fail/><br>
 0xDEADC0DE / ph4r05: <https://deadcode.me/><br>
+Lazy Ninja: <https://www.cryptolazyninja.com/><br>
 
 ### :office: Vendor Security Programs:
 Trezor: <https://trezor.io/security/><br> 
