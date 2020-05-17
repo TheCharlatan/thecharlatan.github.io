@@ -1,22 +1,22 @@
 ---
 layout: post
-title: A practical supply chain attack on the COLDCARD
+title: A practical supply chain attack on the Coldcard
 image: /images/dev-warning.png
 ---
 
-*TLDR: The COLDCARD does a factory reset when an existing PIN is
-changed to an empty PIN , contrary to COLDCARD's claims that a factory reset is
+*TLDR: The Coldcard does a factory reset when an existing PIN is
+changed to an empty PIN , contrary to Coldcard's claims that a factory reset is
 impossible. This can be used to distribute tampered devices without much
-effort. COLDCARD has not patched the issue to date.*
+effort. Coldcard has not patched the issue to date.*
 
 ### Preface
 
-The COLDCARD hardware wallet has a dual chip architecture, where some of the
+The Coldcard hardware wallet has a dual chip architecture, where some of the
 entropy used to generate keys and the PIN used by the user to authenticate is
 stored on a secure chip (an atecc608a), while the actual signing, transaction
 logic and i/o is done on a general purpose MCU (STM32L496RG).
 
-I recently read that the COLDCARD allows loading firmware that was not
+I recently read that the Coldcard allows loading firmware that was not
 officially signed by the wallet's developers. This is intended by them and
 even one of their advertised features. On their website coldcardwallet.com they
 state:
@@ -49,7 +49,7 @@ documentation](<https://github.com/Coldcard/firmware/blob/master/docs/pin-entry.
 
 ### Finding a loophole
 
-But what if for example a reseller of the COLDCARD flashes his own firmware? In
+But what if for example a reseller of the Coldcard flashes his own firmware? In
 this case the user would not see the warning screen, or the red warning light,
 since it is only displayed on the first time the firmware is run. The main
 protection against this is that once the wallet has been setup, it cannot be
@@ -78,7 +78,7 @@ interception from the factory).
 
 ### The exploit
 
-I then checked in the COLDCARD [source
+I then checked in the Coldcard [source
 code](https://github.com/coldcard/firmware) if this claim actually holds up,
 attempting to find a way with my own, changed firmware to put the device back
 in what I would call "Blank - fresh off the factory" mode - meaning in all
@@ -137,7 +137,7 @@ or not can be manipulated from our malicious firmware as well.  Meaning if we
 add `settings.set('terms_ok', 0)` to the tampered firmware, the terms will
 display again on next startup.
 
-At this point a reseller could then distribute the COLDCARD to his customers,
+At this point a reseller could then distribute the Coldcard to his customers,
 without a trace that it has been tampered with. They later state in their
 faq that: 
 
@@ -158,7 +158,7 @@ chain security. To summarize:
 ### Mitigation
 
 There don't seem to be any easy mitigations against this attack on current
-COLDCARD devices, since it would require changes to the bootloader, which is
+Coldcard devices, since it would require changes to the bootloader, which is
 locked-down and therefore cannot be updated easily. A patch can only be
 deployed to new devices shipped with a patched bootloader. As a future
 mitigation for new devices, they could not allow its bootloader to run
@@ -189,7 +189,7 @@ bottom with a sharp knife and resealing it again with heat in a similar way, or
 if laminating equipment is available in the same way, like the sides of the
 sleeve.
 
-### COLDCARD's response
+### Coldcard's response
 
 After initially acknowledging the issue, no fix was provided for it and no
 bounty was paid out. Since they have no intention of fixing the issue, I am now
@@ -197,4 +197,20 @@ publishing this report. I did ask for prior permission to post about the issue,
 which they gave me as long as I mentioned their PIN code developer
 documentation (also linked and quoted further above):
 <https://github.com/Coldcard/firmware/blob/master/docs/pin-entry.md#how-to-develop-professional-code-on-coldcard>
+
+### Update 20202-05-17
+
+Coldcard has now published a [blog
+post](https://blog.coinkite.com/supply-chain-trust-minimized/) addressing the
+issue. They claim that the attack I described was part of their initial threat
+model. This is absurd, since the main claim that the PIN cannot be changed (as
+quoted further above) was changed the day they published the blog post in [this
+commit](https://github.com/Coldcard/firmware/commit/e1fb05ddc5e739ff72b51b4374aafcb1314bc4ea#diff-39446223fd2b6351a48d4c1c20eeeae1).
+They also present updating the firmware as a golden bullet mitigation against
+the attack. Again, while I think updating the firmware is a decent protection,
+this alone is not enough. Users also need to a use a feature that was
+introduced in that update, to be sure that the update was installed in the
+first place. I also still believe that a secondary, thin bootloader acting as a
+permanent backdoor can be flashed on the device, however I lack the motivation
+and tools to attempt this.
 
