@@ -351,6 +351,15 @@ Let me know here: <https://github.com/TheCharlatan/thecharlatan.github.io><br>
 
 ### June
 
+:office: Vendor: Coinkite<br>
+:iphone: Product: Coldcard MK1 and MK2<br>
+:scroll: Title: Laser Fault Injection<br>
+:nerd_face: Detail: Using a vulnerability in the ATECC508A secure memory microcontroller that the Coldcard MK1/2 uses to store its secrets, an attacker can gain the PIN code of a Coldcard. The attack uses Laser fault injection to bypass access condition verification. The attack was not reproducible on an ATECC608A (which Coldcard currently uses) and requires decapping the memory chip.<br>
+:poop: Bug: Inherent Weakness in ATECC508A<br>
+:sunglasses: Ledger Donjon<br>
+:mega: Explanation from vendor: <https://blog.coinkite.com/laser-fault-injection/><br>
+:dart: Explanation from reporter: <https://donjon.ledger.com/coldcard-pin-code/><br>
+
 :office: Vendor: Shift Cryptosecurity<br>
 :iphone: Product: BitBox01<br> 
 :scroll: Title: Blinking pattern mismatch<br>
@@ -496,13 +505,13 @@ Let me know here: <https://github.com/TheCharlatan/thecharlatan.github.io><br>
 ### March
 
 :office: Vendor: Coinkite<br>
-:iphone: Product: COLDCARD<br>
+:iphone: Product: Coldcard<br>
 :scroll: Title: Supply Chain Attack with attacker controlled Firmware<br>
-:nerd_face: Detail: The COLDCARD does a factory reset when an existing PIN is changed to an empty PIN , contrary to COLDCARD’s claims that a factory reset is impossible. This can be used to distribute tampered devices without much effort. COLDCARD has not patched the issue to date.<br>
+:nerd_face: Detail: The Coldcard does a factory reset when an existing PIN is changed to an empty PIN , contrary to Coldcard’s claims that a factory reset is impossible. This can be used to distribute tampered devices without much effort. Coldcard has not patched the issue to date.<br>
 :poop: Bug: Bad PIN check / zero condition<br>
 :sunglasses: Reporter: TheCharlatan<br>
 :mega: Explanation from vendor: <https://blog.coinkite.com/supply-chain-trust-minimized/><br>
-:dart: Explanation from reporter: <https://thecharlatan.github.io/COLDCARD-Supply-Chain/><br>
+:dart: Explanation from reporter: <https://thecharlatan.github.io/Coldcard-Supply-Chain/><br>
 
 :office: Vendor: Trezor<br>
 :iphone: Product: Model T<br>
