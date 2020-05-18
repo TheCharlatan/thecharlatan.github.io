@@ -356,7 +356,7 @@ Let me know here: <https://github.com/TheCharlatan/thecharlatan.github.io><br>
 :scroll: Title: Laser Fault Injection<br>
 :nerd_face: Detail: Using a vulnerability in the ATECC508A secure memory microcontroller that the Coldcard MK1/2 uses to store its secrets, an attacker can gain the PIN code of a Coldcard. The attack uses Laser fault injection to bypass access condition verification. The attack was not reproducible on an ATECC608A (which Coldcard currently uses) and requires decapping the memory chip.<br>
 :poop: Bug: Inherent Weakness in ATECC508A<br>
-:sunglasses: Ledger Donjon<br>
+:sunglasses: Reporter: Ledger Donjon<br>
 :mega: Explanation from vendor: <https://blog.coinkite.com/laser-fault-injection/><br>
 :dart: Explanation from reporter: <https://donjon.ledger.com/coldcard-pin-code/><br>
 
@@ -477,7 +477,15 @@ Let me know here: <https://github.com/TheCharlatan/thecharlatan.github.io><br>
 :poop: Bug: Weakness in firmware hardening<br> 
 :sunglasses: Reporter: Lazy Ninja<br>
 :mega: Explanation from vendor: <https://medium.com/shiftcrypto/bitboxapp-4-16-0-with-bitbox02-firmware-5-0-0-release-7073ade23988><br>
-:darf: Explanation from reporter: <https://www.cryptolazyninja.com/2019/12/bitbox02-weak-password-attack.html><br>
+:dart: Explanation from reporter: <https://www.cryptolazyninja.com/2019/12/bitbox02-weak-password-attack.html><br>
+
+:office: Vendor: Shapeshift<br>
+:iphone: Product: KeepKey<br>
+:scroll: Title: PIN Extraction by Side Channel<br>
+:nerd_face: Detail: Using a resistor shunt and power probe, a side channel attack could be launched against Keepkey's PIN verification. Due to their usage of an non-constant time AES and memcmp implementation, two key components for quick bruteforcing, a PIN extraction attack could be launched. This exploit was patched by KeepKey in firmware version 6.4.1. <br>
+:poop: Bug: Non-constant time PIN verification<br>
+:sunglasses: Reporter: Ledger Donjon<br>
+:dart: Explanation from reporter: <https://donjon.ledger.com/keepkey-side-channel-attack/><br>
 
 :office: Vendor: Coinkite<br>
 :iphone: Product: Coldcard<br>
