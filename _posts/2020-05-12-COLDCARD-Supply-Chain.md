@@ -198,7 +198,7 @@ which they gave me as long as I mentioned their PIN code developer
 documentation (also linked and quoted further above):
 <https://github.com/Coldcard/firmware/blob/master/docs/pin-entry.md#how-to-develop-professional-code-on-coldcard>
 
-### Update 20202-05-17
+### Update 2020-05-17
 
 Coldcard has now published a [blog
 post](https://blog.coinkite.com/supply-chain-trust-minimized/) addressing the

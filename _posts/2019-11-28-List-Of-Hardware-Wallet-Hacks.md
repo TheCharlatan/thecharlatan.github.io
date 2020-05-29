@@ -79,6 +79,13 @@ Let me know here: <https://github.com/TheCharlatan/thecharlatan.github.io><br>
 :mega: Explanation from vendor: <https://shiftcrypto.ch/bitbox01/disclosure><br> 
 :dart: Explanation from reporter: <https://saleemrashid.com/2018/11/26/breaking-into-bitbox><br> 
 
+:office: Vendor: Shift Cryptosecurity<br>
+:iphone: Product: BitBox01<br>
+:scroll: Title: Firmware Downgrade<br>
+:nerd_face: Detail: The firmware of the BitBox01 could be downgraded to older official versions. Since the firmware version check happens in the bootloader this patch could only be introduced to new devices. Devices already delivered and in use would remain susceptible to the attack.<br>
+:poop: Bug: Version Downgrade<br>
+:patch: Patch: <https://github.com/digitalbitbox/mcu/commit/350c7a8eadc080436d0e7fa9ecebbb0e5246e5a4><br>
+
 ### March:
 
 :office: Vendor: Ledger<br>
