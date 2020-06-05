@@ -566,6 +566,16 @@ Let me know here: <https://github.com/TheCharlatan/thecharlatan.github.io><br>
 :mega: Explanation from vendor:
 <https://blog.trezor.io/details-of-firmware-updates-for-trezor-one-version-1-9-0-and-trezor-model-t-version-2-3-0-46deb141fc09><br>
 
+:office: Vendor: All<br> 
+:iphone: Product: All hardware wallets with segwit support<br>
+:scroll: Title: Large Transaction fee viat two Segwit transactions<br>
+:nerd_face: Detail: A user has two UTXOs, one with value 15 BTC and hash_prev 1 and another with 20 BTC and hash_prev 2. He now creates a transaction spending 20BTC plus a small fee. For this the malware selects as input 1 the UTXO with hash_prev 1 and a value of 15 BTC and creates a faked input 2 consuming the hash_prev 2 of the UTXO with 20 BTC, but lies about the amount and sets it to 5.00001 BTC. The user confirms the transaction as spending 20 BTC plus 0.00001 BTC fee. The malware then gives an error and asks the user to re-sign the transaction. This time, it creates fake input 1 with hash_prev 1, but fake amount 0.00001 BTC and real input 2 with hash_prev 2 and fake amount 20 BTC. The user again sees that he is spending 20 BTC plus 0.00001 BTC fee and signs the transaction. The malware then takes input 1 of the first transaction and combines it with input 2 of the second transaction. This completes to a valid transaction with valid previous amounts, but with a fee of (20 + 15)-20 = 15 BTC. This extra fee can either be used as a ransom, or to share profit with a miner. The solution to this problem is to validate that the amount of the input transaction is not fraudulent. The only way to achieve this is checking that the transaction committed to in the transaction input actually contains the balance as claimed.<br>
+:poop: Bug: Time of check was not time of use for the transaction input balance validation. This disclosure had a wake of controversy, since non transaction index are now left without hardware wallet support.<br>
+:sunglasses: Reporter: Saleem Rashid<br>
+:mega: Explanation from Vendors:<br>
+<https://blog.trezor.io/details-of-firmware-updates-for-trezor-one-version-1-9-1-and-trezor-model-t-version-2-3-1-1eba8f60f2dd><br>
+<https://donjon.ledger.com/lsb/010/><br>
+<https://medium.com/shiftcrypto/bitbox-app-firmware-update-6-2020-c70f733a5330><br>
 
 ## Footnotes
 ### :sunglasses: Relevant blogs:
