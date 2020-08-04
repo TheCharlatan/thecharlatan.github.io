@@ -541,7 +541,7 @@ Let me know here: <https://github.com/TheCharlatan/thecharlatan.github.io><br>
 :office: Vendor: Trezor<br>
 :iphone: Product: Model T<br>
 :scroll: Title: Malicious Change in Mixed Transactions<br>
-:nerd_face: Detail: In Trezor's two stage transactiong validation and signing process claims about the addresses in the first stage were not sufficiently verified in the second stage. This could be used to insert a malicious 1of2 multisig change output into the transaction. This is very similar to an attack as discovered by Marko Bencun in October 2019.<br>
+:nerd_face: Detail: In Trezor's two stage transaction validation and signing process claims about the addresses in the first stage were not sufficiently verified in the second stage. This could be used to insert a malicious 1of2 multisig change output into the transaction. This is very similar to an attack as discovered by Marko Bencun in October 2019.<br>
 :poop: Bug: Bad transaction validation on device<br>
 :sunglasses: Reporter: Saleem Rashid<br>
 :mega: Explanation from vendor:
@@ -577,15 +577,28 @@ Let me know here: <https://github.com/TheCharlatan/thecharlatan.github.io><br>
 <https://donjon.ledger.com/lsb/010/><br>
 <https://medium.com/shiftcrypto/bitbox-app-firmware-update-6-2020-c70f733a5330><br>
 
+### June
+
 :office: Vendor: Ledger<br>
-:iphone: Ledger Nano X<br>
+:iphone: Product: Ledger Nano X<br>
 :scroll: Title: JTAG/SWD Protocols Enabled on STM32WB55 Unsecured Processor<br>
 :nerd_face: Detail: The Ledger Nano X MCU had its debug interfaces enabled. This could effectively allow either a supply chain attacker or an evil maid to convert the device into a USB rubber ducky. However a scenario making the user effectively compromise her funds could not be constructed.<br>
-:poop: Bug: Left debug interfaces open on the device<br>
+:poop: Bug: Debug interfaces open on production device<br>
 :sunglasses: Reporter: Kraken Security Lab<br>
 :mega: Explanation from vendor: <https://donjon.ledger.com/lsb/013/><br>
 :dart: Explanation from reporter:
 <https://blog.kraken.com/post/5590/kraken-security-labs-supply-chain-attacks-against-ledger-nano-x/><br>
+
+### August
+
+:office: Vendor: Ledger<br>
+:iphone: Ledger Nano X and S<br>
+:scroll: Title: Bitcoin derived fork/altcoins cross account stealing<br>
+:nerd_face: Detail: The Ledger Bitcoin app is an umbrella app for all bitcoin forks and bitcoin style altcoins. Apps for the specific coins are compiled by adding flags during the compilation process. This means that the key path validation and derivation is all done based on the logic in the Bitcoin app. An attacker can use this circumstance to sign transactions meant for one coin on another coin's network, while making the user believe that he is indeed signing for the correct coin and network.<br>
+:poop: Bug: Bad key path validation and isolation between Apps<br>
+:sunglasses: Reporter: Monokh<br>
+:mega: Explanation from vendor: <https://donjon.ledger.com/lsb/014/><br>
+:dart: Explanation from reporter: <https://monokh.com/posts/ledger-app-isolation-bypass><br>
 
 ## Footnotes
 ### :sunglasses: Relevant blogs:
@@ -594,6 +607,7 @@ Saleem Rashid: <https://saleemrashid.com/><br>
 wallet.fail: <https://wallet.fail/><br>
 0xDEADC0DE / ph4r05: <https://deadcode.me/><br>
 Lazy Ninja: <https://www.cryptolazyninja.com/><br>
+Monokh: <https://monokh.com/><br>
 
 ### :office: Vendor Security Programs:
 Trezor: <https://trezor.io/security/><br> 
