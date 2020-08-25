@@ -591,6 +591,14 @@ Let me know here: <https://github.com/TheCharlatan/thecharlatan.github.io><br>
 
 ### August
 
+:office: Vendor: Skycoin<br>
+:iphone: Product: Sky Wallet<br>
+:scroll: Title: Protobuf tiny message buffer overflow<br>
+:nerd_face: Detail: Disclosed among a host of memory issues found in the Skycoin Wallet firmware, the vulnerability triggers an out of bounds write in the protobuf message handling when a tiny message is sent. A very similar exploit was possible before on the Trezor One (on which the Sky Wallet is based). Though it can be triggered early in the USB communication and pre-authentication, it could not be leveraged at the time to gain unauthenticated access to the wallet.<br>
+:poop: Bug: Buffer overflow in protobuf message handling<br>
+:sunglasses: Reporter: Christian Reitter<br>
+:dart: Explanation from reporter: <https://blog.inhq.net/posts/skycoin-firmware-vuln//><br>
+
 :office: Vendor: Ledger<br>
 :iphone: Ledger Nano X and S<br>
 :scroll: Title: Bitcoin derived fork/altcoins cross account stealing<br>
