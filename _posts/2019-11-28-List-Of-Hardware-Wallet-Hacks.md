@@ -608,6 +608,17 @@ Let me know here: <https://github.com/TheCharlatan/thecharlatan.github.io><br>
 :mega: Explanation from vendor: <https://donjon.ledger.com/lsb/014/><br>
 :dart: Explanation from reporter: <https://monokh.com/posts/ledger-app-isolation-bypass><br>
 
+:office: Vendor: Trezor / Keepkey<br>
+:iphone: Product: All their hardware wallets<br>
+:scroll: Title: A ransom attack on Trezor's and KeepKey's passphrase
+handling<br>
+:nerd_face: Detail: Both Keepkey and Trezor allow entering the mnemonic passphrase aka 25th word on the host machine in order to create and seed a new wallet. There is no visual confirmation of this word on the device once it has been entered. This allows a compromised host or man in the middle to send an arbitrary/fake password to the device without the user noticing. The attacker can then choose to change this arbitrary/fake password in order to withhold access to the coins and can even ask for ransom in order to reveal the original passphrase again.<br>
+:poop: Bug: No visual confirmation of passphrase on device. toctou.<br>
+:sunglasses: Reporter: benma<br>
+:mega: Explanation from vendor: <https://blog.trezor.io/firmware-updates-for-trezor-model-t-version-2-3-3-and-trezor-model-one-version-1-9-3-c94f7a3b6fea><br>
+:dart: Explanation from reporter: <https://benma.github.io/2020/09/02/trezor-keepkey-passphrase.html><br>
+
+
 ## Footnotes
 ### :sunglasses: Relevant blogs:
 Christian Reitter: <https://blog.inhq.net/><br>
@@ -616,6 +627,7 @@ wallet.fail: <https://wallet.fail/><br>
 0xDEADC0DE / ph4r05: <https://deadcode.me/><br>
 Lazy Ninja: <https://www.cryptolazyninja.com/><br>
 Monokh: <https://monokh.com/><br>
+benma: <https://benma.github.io/><br>
 
 ### :office: Vendor Security Programs:
 Trezor: <https://trezor.io/security/><br> 
