@@ -517,6 +517,28 @@ Let me know here: <https://github.com/TheCharlatan/thecharlatan.github.io><br>
 :mega: Explanation from vendor: <https://donjon.ledger.com/lsb/008/><br>
 :dart: Explanation from reporter: <https://deadcode.me/blog/2020/04/25/Ledger-Monero-app-spend-key-extraction.html><br>
 
+### February
+
+:office: Vendor: Ledger<br>
+:iphone: Prouct: Ledger Nano<br>
+:scroll: Title: Monero tx unlock time not verified<br>
+:nerd_face: Detail: Non-verification of the monero unlock time value could have allowed a compromised host to permanently lock-up a user's monero. After the initial patch another bug (integer overflow) was introduced that would have allowed the host to show a wrong unlock time to the user.<br>
+:poop: Bug: Bad transaction validation on device<br>
+:sunglasses: Reporter: TheCharlatan<br>
+:mega: Explanation from vendor: <https://donjon.ledger.com/lsb/009/><br>
+:dart: Explanation from reporter:
+<https://thecharlatan.ch/Wallet-Timelock/><br>
+
+:office: Vendor: Trezor<br>
+:iphone: Prouct: Model T<br>
+:scroll: Title: Monero tx unlock time not verified<br>
+:nerd_face: Detail: Non-verification of the monero unlock time value could have allowed a compromised host to permanently lock-up a user's monero.<br>
+:poop: Bug: Bad transaction validation on device<br>
+:sunglasses: Reporter: TheCharlatan<br>
+:mega: Explanation from vendor: <https://blog.trezor.io/details-of-firmware-updates-for-trezor-one-version-1-9-0-and-trezor-model-t-version-2-3-0-46deb141fc09><br>
+:dart: Explanation from reporter:
+<https://thecharlatan.ch/Wallet-Timelock/><br>
+
 ### March
 
 :office: Vendor: Coinkite<br>
