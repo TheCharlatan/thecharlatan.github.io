@@ -55,7 +55,7 @@ Roughly five different `unlock_time` usage patterns emerge:
   [93df46c18742ff6fd0ba86076bd360b0a32cda4f670b9944c9f176d5c9783959](https://localmonero.co/blocks/search/93df46c18742ff6fd0ba86076bd360b0a32cda4f670b9944c9f176d5c9783959)
 4. unlock_time ~1'400'000'000
 * Large `unlock_time` represents Unix epoch timestamps
-* No such transactions recorded!
+* No transactions in this range recorded!
 * Example:
   [012932593e59f21d10b7badc5f0556c1aaaefd60d0ebf05f1637361a66b17273](https://localmonero.co/blocks/search/012932593e59f21d10b7badc5f0556c1aaaefd60d0ebf05f1637361a66b17273)
 5. unlock_time >1'400'000'000'000
