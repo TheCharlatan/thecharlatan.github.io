@@ -33,7 +33,8 @@ prevent transaction linkability. Any characteristic of the transaction
 revealing something about the user or software that created it reduces
 anonymity. One such example is the statistical analysis of `unlock_time`, which
 partitions the Monero anonymity pool based on the software and the user that
-generated the transactions.
+generated the transactions. The data presented here was collected from block
+1'000'000 to 2'197'574.
 
 Roughly five different `unlock_time` usage patterns emerge:
 
@@ -47,19 +48,19 @@ Roughly five different `unlock_time` usage patterns emerge:
 * These low-integer `unlock_time` values do not make semantic sense, so the developer’s intent is unclear. Perhaps they thought block times were relative rather than absolute, or the field is used for something else unrelated to `unlock_time`.
 * In total 12297 transactions, ~98% of current `unlock_time` usage
 * Example: [bf800d30889423fafdf7cde841f1a61d3372667a0efc7c6e8784f220c0dcc3a8](https://localmonero.co/blocks/search/bf800d30889423fafdf7cde841f1a61d3372667a0efc7c6e8784f220c0dcc3a8)
-3. unlock_time ~ 1,000,000+
+3. unlock_time ~ 1'000'000+
 *  `unlock_time` less than 500,000,000 is interpreted as block height
 * 195 transactions, ~2% of current `unlock_time` usage
 * Example:
   [93df46c18742ff6fd0ba86076bd360b0a32cda4f670b9944c9f176d5c9783959](https://localmonero.co/blocks/search/93df46c18742ff6fd0ba86076bd360b0a32cda4f670b9944c9f176d5c9783959)
-4. unlock_time ~1,400,000,000
+4. unlock_time ~1'400'000'000
 * Large `unlock_time` represents Unix epoch timestamps
 * No such transactions recorded!
 * Example:
   [012932593e59f21d10b7badc5f0556c1aaaefd60d0ebf05f1637361a66b17273](https://localmonero.co/blocks/search/012932593e59f21d10b7badc5f0556c1aaaefd60d0ebf05f1637361a66b17273)
-5. unlock_time >1,400,000,000,000
+5. unlock_time >1'400'000'000'000
 * These outputs theoretically unlock far into the future
-* A single transaction with 18446744073709551616, [created by Isthmus](https://twitter.com/Mitchellpkt0/status/1251621277179146240) and locked until the year 292277026596.
+* A single transaction with 18446744073709551616, [created by Isthmus](https://twitter.com/Mitchellpkt0/status/1251621277179146240) and locked until the year 292'277'026'596.
 * Example:
   [2c2762d8817ea4d1cb667752698f2ff7597a051d433043776945669043d908b5](https://localmonero.co/blocks/search/2c2762d8817ea4d1cb667752698f2ff7597a051d433043776945669043d908b5)
 
