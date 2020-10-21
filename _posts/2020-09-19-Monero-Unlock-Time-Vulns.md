@@ -159,7 +159,7 @@ and compared it to the unlock time value.
 This patch was then expanded upon by other reviewers until settling for the
 formula 
 
-`min(median(block timestamps of the past 60 blocks) + 62 minutes,`
+`min(median(block timestamps of the past 60 blocks) + 61 minutes,`
 `current tip block timestamp + 2 minutes)`
 
 It aims to more accurately represent the current time. 

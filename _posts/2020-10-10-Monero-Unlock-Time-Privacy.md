@@ -64,7 +64,7 @@ Roughly five different `unlock_time` usage patterns emerge:
 * Example:
   [2c2762d8817ea4d1cb667752698f2ff7597a051d433043776945669043d908b5](https://localmonero.co/blocks/search/2c2762d8817ea4d1cb667752698f2ff7597a051d433043776945669043d908b5)
 
-Isthmus also produced the following plot on `unlock_time` usage (and the one
+Isthmus also produced the following plot on `unlock_time` usage (and the two
 below):
 
 ![unlock_time](/images/unlock_time_stats.png "unlock_time dot graph")
@@ -114,7 +114,13 @@ Peculiar patterns, like these low values, enable transaction linkability. Not
 only the sender and the receiver are affected and might be de-anonymized, but
 also any user whose ring signatures selected these outputs as mix-ins. In a
 decoy-based anonymity scheme, a user cannot negatively impact privacy without
-affecting others.
+affecting others. 
+
+The following histogram visually reveals how much `unlock_time` usage follows
+these illegitimate patterns and how small the fraction of sensible values (blue
+circled) is:
+
+![unlock_time](/images/unlock_time_histogram.png "unlock_time histogram, blue are the legitimate values")
 
 Monero is not the only cryptocurrency exhibiting information leaks due to the
 erratic use of `unlock_time`. Other privacy coins have even seen their time
