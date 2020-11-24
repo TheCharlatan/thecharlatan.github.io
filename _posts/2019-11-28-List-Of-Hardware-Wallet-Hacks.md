@@ -622,13 +622,29 @@ Let me know here: <https://github.com/TheCharlatan/thecharlatan.github.io><br>
 :dart: Explanation from reporter: <https://blog.inhq.net/posts/skycoin-firmware-vuln//><br>
 
 :office: Vendor: Ledger<br>
-:iphone: Ledger Nano X and S<br>
+:iphone: Product: Ledger Nano X and S<br>
 :scroll: Title: Bitcoin derived fork/altcoins cross account stealing<br>
 :nerd_face: Detail: The Ledger Bitcoin app is an umbrella app for all bitcoin forks and bitcoin style altcoins. Apps for the specific coins are compiled by adding flags during the compilation process. This means that the key path validation and derivation is all done based on the logic in the Bitcoin app. An attacker can use this circumstance to sign transactions meant for one coin on another coin's network, while making the user believe that he is indeed signing for the correct coin and network.<br>
-:poop: Bug: Bad key path validation and isolation between Apps<br>
+:poop: Bug: Bad key path validation and isolation between apps<br>
 :sunglasses: Reporter: Monokh<br>
 :mega: Explanation from vendor: <https://donjon.ledger.com/lsb/014/><br>
 :dart: Explanation from reporter: <https://monokh.com/posts/ledger-app-isolation-bypass><br>
+
+:office: Vendor: Coinkite<br>
+:iphone: Product: Coldcard <br>
+:scroll: Title: Bitcoin derived fork/altcoins/networks cross account stealing<br>
+:nerd_face: Detail: The same as Ledger, but with Bitcoin testnet/mainnet<br>
+:poop: Bug: Bad key path validation and isolation between apps<br>
+:sunglasses: Reporter: benma<br>
+:dart: Explanation from reporter: <https://benma.github.io/2020/11/24/coldcard-isolation-bypass.html><br>
+
+:office: Vendor: Shapeshift<br>
+:iphone: Product: Keepkey<br>
+:scroll: Title: Bitcoin derived fork/altcoins cross account stealing<br>
+:nerd_face: Detail: Same as Ledger<br>
+:poop: Bug: Bad key path validation and isolation between apps<br>
+:sunglasses: Reporter: TheCharlatan<br>
+:dart: Explanation from reporter: <https://thecharlatan.ch/Coin-Isolation/><br>
 
 :office: Vendor: Trezor / Keepkey<br>
 :iphone: Product: All their hardware wallets<br>
