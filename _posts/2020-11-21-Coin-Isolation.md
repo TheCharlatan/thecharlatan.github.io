@@ -8,7 +8,7 @@ image: /images/keepkey.jpeg
 transaction logic between coins. It allows coins from one cryptocurrency, e.g.
 bitcoin, to be spent by the transaction flow of another, e.g. Litecoin. I found
 two other hardware wallets that are vulnerable to this exploit, Keepkey and
-Coldcard. To this day, neither have patched the issue.*
+Coldcard. To this day, Keepkey has not patched the issue.*
 
 ### Preface
 
@@ -81,4 +81,13 @@ post](https://shapeshift.com/library/keepkey-firmware-update-6-5-1). I am
 disappointed that the Keepkey team is not committed to patching vulnerabilities
 in their hardware wallet within reasonable time. I therefore strongly recommend
 against buying one or promoting its use.
+
+### Updates
+
+Coldcard provided a fix to the issue in their version 3.2.0 release by moving
+the testnet screen behind an additional "Danger Zone" warning screen, which
+they explain in another [blog
+post](https://blog.coinkite.com/testnet-considered-useful/). Since this extra
+step protects users from being duped into the testnet workflow, I consider this
+a fix for the issue.
 

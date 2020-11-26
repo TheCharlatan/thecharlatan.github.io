@@ -636,6 +636,7 @@ Let me know here: <https://github.com/TheCharlatan/thecharlatan.github.io><br>
 :nerd_face: Detail: The same as Ledger, but with Bitcoin testnet/mainnet<br>
 :poop: Bug: Bad key path validation and isolation between apps<br>
 :sunglasses: Reporter: benma<br>
+:mega: Explanation from vendor: <https://blog.coinkite.com/testnet-considered-useful/><br>
 :dart: Explanation from reporter: <https://benma.github.io/2020/11/24/coldcard-isolation-bypass.html><br>
 
 :office: Vendor: Shapeshift<br>
