@@ -4,10 +4,8 @@ title: About Me
 permalink: /about/
 ---
 
-My life centers around the acquisition of ice cream, but next to that I study
-undergrad physics and computer science at the university of Zurich, and dabble
-my hands in build systems and cryptocurrencies. I am a huge fan and proponent
-of [reproducible builds](https://reproducible-builds.org) and the [guix linux
-distribution](http://guix.gnu.org/). I care about privacy, ecology and
-democracy.
-
+My work is focused on Bitcoin Core development and sponsored by
+[spiral](https://spiral.xyz). I have a major in computer science and a minor in
+physics from the university of Zurich. I like greyhounds, bitcoin, food,
+[reproducible builds](https://reproducible-builds.org) and the [guix linux
+distribution](http://guix.gnu.org/).
